@@ -1,6 +1,6 @@
 <?php
 /*
-* Template Name: PortfolioPage
+* this file is part of Project Archive page
 */
 get_header(); 
 ?>
@@ -13,15 +13,15 @@ get_header();
     <div class="scr-bar_container">
       <div
         class="content"
-        data-pagetitle="My Portfolio"
-        data-pagesubtitle="Portfolio"
+        data-pagetitle="My Project"
+        data-pagesubtitle="Project"
       >
         <div class="bg-top"></div>
         <div class="bg-bottom"></div>
         <!--section  -->
         <section>
           <div class="section-title fl-wrap">
-            <h3>Portfolio</h3>
+            <h3>Project</h3>
             <div class="gallery-filters-wrap">
               <div class="gallery-filters init_hidden_filter">
                 <a
@@ -51,15 +51,15 @@ get_header();
               </div>
             </div>
           </div>
-          <!-- portfolio start -->
+          <!-- project start -->
           <div class="gallery-items min-pad hover-dir fl-wrap">
             <!-- gallery-item-->
             <div class="gallery-item web branding">
               <div class="grid-item-holder hov_zoom">
-                <img src="images/folio/1.jpg" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/1.jpg" alt="" />
                 <div class="grid-det">
                   <a
-                    href="images/folio/1.jpg"
+                    href="<?php echo get_template_directory_uri(); ?>/images/folio/1.jpg"
                     class="grid-media-zoom image-popup"
                     ><i class="far fa-search"></i
                   ></a>
@@ -68,7 +68,7 @@ get_header();
                   </div>
                   <div class="grid-det-item">
                     <a
-                      href="portfolio-single.html"
+                      href="project-single.html"
                       class="ajax grid-det_link"
                       >Fitness Studio Website<i
                         class="fal fa-long-arrow-right"
@@ -82,10 +82,10 @@ get_header();
             <!-- gallery-item-->
             <div class="gallery-item photography uides">
               <div class="grid-item-holder hov_zoom">
-                <img src="images/folio/2.jpg" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/2.jpg" alt="" />
                 <div class="grid-det">
                   <a
-                    href="images/folio/2.jpg"
+                    href="<?php echo get_template_directory_uri(); ?>/images/folio/2.jpg"
                     class="grid-media-zoom image-popup"
                     ><i class="far fa-search"></i
                   ></a>
@@ -94,7 +94,7 @@ get_header();
                   </div>
                   <div class="grid-det-item">
                     <a
-                      href="portfolio-single.html"
+                      href="project-single.html"
                       class="ajax grid-det_link"
                       >Architecture Agensy<i
                         class="fal fa-long-arrow-right"
@@ -108,7 +108,7 @@ get_header();
             <!-- gallery-item-->
             <div class="gallery-item web">
               <div class="grid-item-holder hov_zoom">
-                <img src="images/folio/3.jpg" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/3.jpg" alt="" />
                 <div class="grid-det">
                   <a
                     href="https://vimeo.com/6698875"
@@ -120,7 +120,7 @@ get_header();
                   </div>
                   <div class="grid-det-item">
                     <a
-                      href="portfolio-single.html"
+                      href="project-single.html"
                       class="ajax grid-det_link"
                       >Video Project<i
                         class="fal fa-long-arrow-right"
@@ -134,10 +134,10 @@ get_header();
             <!-- gallery-item-->
             <div class="gallery-item branding photography">
               <div class="grid-item-holder hov_zoom">
-                <img src="images/folio/4.jpg" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/4.jpg" alt="" />
                 <div class="grid-det">
                   <a
-                    href="images/folio/4.jpg"
+                    href="<?php echo get_template_directory_uri(); ?>/images/folio/4.jpg"
                     class="grid-media-zoom image-popup"
                     ><i class="far fa-search"></i
                   ></a>
@@ -146,7 +146,7 @@ get_header();
                   </div>
                   <div class="grid-det-item">
                     <a
-                      href="portfolio-single.html"
+                      href="project-single.html"
                       class="ajax grid-det_link"
                       >Photography Project<i
                         class="fal fa-long-arrow-right"
@@ -160,10 +160,10 @@ get_header();
             <!-- gallery-item-->
             <div class="gallery-item uides web">
               <div class="grid-item-holder hov_zoom">
-                <img src="images/folio/5.jpg" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/5.jpg" alt="" />
                 <div class="grid-det">
                   <a
-                    href="images/folio/5.jpg"
+                    href="<?php echo get_template_directory_uri(); ?>/images/folio/5.jpg"
                     class="grid-media-zoom image-popup"
                     ><i class="far fa-search"></i
                   ></a>
@@ -172,7 +172,7 @@ get_header();
                   </div>
                   <div class="grid-det-item">
                     <a
-                      href="portfolio-single.html"
+                      href="project-single.html"
                       class="ajax grid-det_link"
                       >Kent Brant Concept<i
                         class="fal fa-long-arrow-right"
@@ -186,10 +186,10 @@ get_header();
             <!-- gallery-item-->
             <div class="gallery-item branding">
               <div class="grid-item-holder hov_zoom">
-                <img src="images/folio/6.jpg" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/6.jpg" alt="" />
                 <div class="grid-det">
                   <a
-                    href="images/folio/6.jpg"
+                    href="<?php echo get_template_directory_uri(); ?>/images/folio/6.jpg"
                     class="grid-media-zoom image-popup"
                     ><i class="far fa-search"></i
                   ></a>
@@ -198,7 +198,7 @@ get_header();
                   </div>
                   <div class="grid-det-item">
                     <a
-                      href="portfolio-single.html"
+                      href="project-single.html"
                       class="ajax grid-det_link"
                       >Corporate website<i
                         class="fal fa-long-arrow-right"
@@ -212,10 +212,10 @@ get_header();
             <!-- gallery-item-->
             <div class="gallery-item uides">
               <div class="grid-item-holder hov_zoom">
-                <img src="images/folio/7.jpg" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/7.jpg" alt="" />
                 <div class="grid-det">
                   <a
-                    href="images/folio/7.jpg"
+                    href="<?php echo get_template_directory_uri(); ?>/images/folio/7.jpg"
                     class="grid-media-zoom image-popup"
                     ><i class="far fa-search"></i
                   ></a>
@@ -224,7 +224,7 @@ get_header();
                   </div>
                   <div class="grid-det-item">
                     <a
-                      href="portfolio-single.html"
+                      href="project-single.html"
                       class="ajax grid-det_link"
                       >Travel Agensy<i
                         class="fal fa-long-arrow-right"
@@ -238,10 +238,10 @@ get_header();
             <!-- gallery-item-->
             <div class="gallery-item web photography">
               <div class="grid-item-holder hov_zoom">
-                <img src="images/folio/8.jpg" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/8.jpg" alt="" />
                 <div class="grid-det">
                   <a
-                    href="images/folio/8.jpg"
+                    href="<?php echo get_template_directory_uri(); ?>/images/folio/8.jpg"
                     class="grid-media-zoom image-popup"
                     ><i class="far fa-search"></i
                   ></a>
@@ -250,7 +250,7 @@ get_header();
                   </div>
                   <div class="grid-det-item">
                     <a
-                      href="portfolio-single.html"
+                      href="project-single.html"
                       class="ajax grid-det_link"
                       >Sport Agensy<i
                         class="fal fa-long-arrow-right"
@@ -262,7 +262,7 @@ get_header();
             </div>
             <!-- gallery-item end-->
           </div>
-          <!-- portfolio end -->
+          <!-- project end -->
         </section>
         <!--section end-->
         <div class="to-top-wrap">

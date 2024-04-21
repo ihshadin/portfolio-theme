@@ -20,9 +20,9 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
         <!--Loader -->
-        <!-- <div class="body-preload">
+        <div class="body-preload">
             <div class="pl-spinner2"><span></span></div>
-        </div> -->
+        </div>
         <!-- loader end  -->
         <!-- main start  -->
         <div id="main">
@@ -44,15 +44,15 @@
                             <!-- <ul>
                                 <li><a href="" class="ajax"><i class="fal fa-home"></i> Home</a></li>
                                 <li><a href="" class="ajax"><i class="fal fa-address-card"></i> Resume</a></li>
-                                <li><a href="" class="ajax"><i class="fal fa-images"></i> Portfolio</a></li>
+                                <li><a href="" class="ajax"><i class="fal fa-images"></i> Project</a></li>
                                 <li><a href="" class="ajax"><i class="fal fa-envelope"></i> Contacts</a></li>
                                 <li><a href="" class="ajax"><i class="fal fa-book"></i> Blog</a></li>
                                 <li>
                                     <a href="#"><i class="fal fa-layer-group"></i> Pages</a>
                                     
                                     <ul>
-                                        <li><a href="portfolio-single.html" class="ajax">Portfolio Single</a></li>
-                                        <li><a href="portfolio-single2.html" class="ajax">Portfolio Single 2</a></li>
+                                        <li><a href="project-single.html" class="ajax">Project Single</a></li>
+                                        <li><a href="project-single2.html" class="ajax">Project Single 2</a></li>
                                         <li><a href="blog-single.html" class="ajax">Blog Single</a></li>
                                         <li><a href="404.html" class="ajax">404</a></li>
                                     </ul>

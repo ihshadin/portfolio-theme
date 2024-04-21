@@ -2,9 +2,6 @@
 /**
  * Shadin functions and definitions
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package Shadin
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -22,29 +19,25 @@ if ( ! defined( '_S_VERSION' ) ) {
 
 function shadin_setup() {
 	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on Shadin, use a find and replace
-		* to change 'shadin' to the name of your theme in all the template files.
-		*/
+	* Make theme available for translation.
+	* Translations can be filed in the /languages/ directory.
+	* If you're building a theme based on Shadin, use a find and replace
+	* to change 'shadin' to the name of your theme in all the template files.
+	*/
 	load_theme_textdomain( 'shadin', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
-		* Let WordPress manage the document title.
-		* By adding theme support, we declare that this theme does not use a
-		* hard-coded <title> tag in the document head, and expect WordPress to
-		* provide it for us.
-		*/
+	* Let WordPress manage the document title.
+	* By adding theme support, we declare that this theme does not use a
+	* hard-coded <title> tag in the document head, and expect WordPress to
+	* provide it for us.
+	*/
 	add_theme_support( 'title-tag' );
 
-	/*
-		* Enable support for Post Thumbnails on posts and pages.
-		*
-		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
+	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -86,11 +79,7 @@ function shadin_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	/**
-	 * Add support for core custom logo.
-	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
-	 */
+	// Add support for core custom logo.
 	add_theme_support(
 		'custom-logo',
 		array(
@@ -115,11 +104,7 @@ function shadin_content_width() {
 }
 add_action( 'after_setup_theme', 'shadin_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
+// Register widget area.
 function shadin_widgets_init() {
 	register_sidebar(
 		array(
@@ -135,9 +120,7 @@ function shadin_widgets_init() {
 }
 add_action( 'widgets_init', 'shadin_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
+// Enqueue scripts and styles.
 function shadin_scripts() {
 	// CSS styles
 	// plugins styles
@@ -165,29 +148,19 @@ function shadin_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'shadin_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
+// Implement the Custom Header feature.
 require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
+// Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
+// Functions which enhance the theme by hooking into WordPress.
 require get_template_directory() . '/inc/template-functions.php';
 
-/**
- * Customizer additions.
- */
+// Customizer additions.
 require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
+// Load Jetpack compatibility file.
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
@@ -200,3 +173,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 // Several features functions
 require get_template_directory() . '/inc/featured/featured-container.php';
+
+// Custom Posts functions
+require get_template_directory() . '/inc/custom-post.php';

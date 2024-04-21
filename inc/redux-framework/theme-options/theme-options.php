@@ -98,7 +98,7 @@ $args = array(
 	'admin_bar'                 => true,
 
 	// Icon for the admin bar menu.
-	'admin_bar_icon'            => 'dashicons-portfolio',
+	'admin_bar_icon'            => 'dashicons-project',
 
 	// Priority for the admin bar menu.
 	'admin_bar_priority'        => 50,
