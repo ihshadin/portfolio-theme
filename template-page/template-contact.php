@@ -1,6 +1,6 @@
 <?php
 /*
-* Template Name: ContactPage
+* Template Name: ContactPage Template
 */
 get_header(); 
 ?>

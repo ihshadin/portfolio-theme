@@ -1,6 +1,6 @@
 <?php
 /*
-* Template Name: ResumePage
+* Template Name: ResumePage Template
 */
 get_header(); 
 ?>

@@ -36,7 +36,7 @@ function register_project_post_type() {
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => true,
-        'menu_position'      => 20,
+        'menu_position'      => 5,
         'supports'           => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail' ),
         'taxonomies'         => array( 'category', 'post_tag' ),
         'show_in_rest'       => true,
@@ -45,4 +45,4 @@ function register_project_post_type() {
      
     register_post_type( 'project', $args );
 }
-add_action( 'init', 'register_project_post_type' );
+add_action( 'init', 'register_project_post_type');

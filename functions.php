@@ -48,9 +48,9 @@ function shadin_setup() {
 	);
 
 	/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
+	* Switch default core markup for search form, comment form, and comments
+	* to output valid HTML5.
+	*/
 	add_theme_support(
 		'html5',
 		array(
@@ -65,16 +65,16 @@ function shadin_setup() {
 	);
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'shadin_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);
+	// add_theme_support(
+	// 	'custom-background',
+	// 	apply_filters(
+	// 		'shadin_custom_background_args',
+	// 		array(
+	// 			'default-color' => 'ffffff',
+	// 			'default-image' => '',
+	// 		)
+	// 	)
+	// );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -92,33 +92,21 @@ function shadin_setup() {
 }
 add_action( 'after_setup_theme', 'shadin_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function shadin_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'shadin_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'shadin_content_width', 0 );
-
 // Register widget area.
-function shadin_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'shadin' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'shadin' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'shadin_widgets_init' );
+// function shadin_widgets_init() {
+// 	register_sidebar(
+// 		array(
+// 			'name'          => esc_html__( 'Sidebar', 'shadin' ),
+// 			'id'            => 'sidebar-1',
+// 			'description'   => esc_html__( 'Add widgets here.', 'shadin' ),
+// 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+// 			'after_widget'  => '</section>',
+// 			'before_title'  => '<h2 class="widget-title">',
+// 			'after_title'   => '</h2>',
+// 		)
+// 	);
+// }
+// add_action( 'widgets_init', 'shadin_widgets_init' );
 
 // Enqueue scripts and styles.
 function shadin_scripts() {
@@ -149,7 +137,7 @@ function shadin_scripts() {
 add_action( 'wp_enqueue_scripts', 'shadin_scripts' );
 
 // Implement the Custom Header feature.
-require get_template_directory() . '/inc/custom-header.php';
+// require get_template_directory() . '/inc/custom-header.php';
 
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
@@ -165,14 +153,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-
-/**
- * Redux Initial.
- */
-// require_once get_template_directory() . '/inc/redux-framework/theme-options/theme-options.php';
+// Redux Framework Integrate
+require_once get_template_directory() . '/inc/redux-framework/theme-options/config.php';
 
 // Several features functions
 require get_template_directory() . '/inc/featured/featured-container.php';
 
 // Custom Posts functions
 require get_template_directory() . '/inc/custom-post.php';
+
+// Custom Taxonomies Added functions
+require get_template_directory() . '/inc/custom-texonomies.php';
+
+// Custom Meta Box Add for Post Type
+require get_template_directory() . '/inc/custom-metabox.php';

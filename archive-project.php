@@ -18,10 +18,30 @@ get_header();
       >
         <div class="bg-top"></div>
         <div class="bg-bottom"></div>
+
+        <?php
+          // $categories = get_terms('category', array(
+          //   'hide_empty' => 0,
+          //   'orderby' => 'ASC',
+          // ));
+
+          // echo '<pre>';
+          // var_dump($categories);
+          // echo '</pre>';
+            
+          // foreach($categories as $category){
+          //   $cat = get_category( $category );
+          //   $cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
+          //   echo '<pre>';
+          //   print_r($category);
+          //   echo '</pre>';
+          // }
+        ?>
+            
         <!--section  -->
         <section>
           <div class="section-title fl-wrap">
-            <h3>Project</h3>
+            <h3><?php echo esc_html('My Latest Projects', 'shadin') ?></h3>
             <div class="gallery-filters-wrap">
               <div class="gallery-filters init_hidden_filter">
                 <a
@@ -30,10 +50,27 @@ get_header();
                   data-filter="*"
                   >All</a
                 >
-                <a href="#" class="gallery-filter" data-filter=".web"
-                  >Web Design</a
-                >
-                <a
+                <?php
+                  $categories = get_terms('category', array(
+                    'hide_empty' => 0,
+                    'orderby' => 'ASC',
+                  ));
+
+                  // echo '<pre>';
+                  // var_dump($categories);
+                  // echo '</pre>';
+                    
+                  foreach($categories as $category) {
+                    $name = $category->name;
+                    $slug = $category->slug;
+                    ?>
+                      <a href="<?php echo esc_url($slug); ?>" class="gallery-filter" data-filter=".<?php echo $slug ?>"
+                        ><?php echo esc_html($name, 'shadin'); ?></a
+                      >
+                    <?php
+                  }
+                ?>
+                <!-- <a
                   href="#"
                   class="gallery-filter"
                   data-filter=".photography"
@@ -47,40 +84,73 @@ get_header();
                 >
                 <a href="#" class="gallery-filter" data-filter=".uides"
                   >Ui Design</a
-                >
+                > -->
               </div>
             </div>
           </div>
           <!-- project start -->
           <div class="gallery-items min-pad hover-dir fl-wrap">
             <!-- gallery-item-->
-            <div class="gallery-item web branding">
-              <div class="grid-item-holder hov_zoom">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/1.jpg" alt="" />
-                <div class="grid-det">
-                  <a
-                    href="<?php echo get_template_directory_uri(); ?>/images/folio/1.jpg"
-                    class="grid-media-zoom image-popup"
-                    ><i class="far fa-search"></i
-                  ></a>
-                  <div class="grid-det_category">
-                    <a href="#">Design </a> <a href="#"> Branding</a>
-                  </div>
-                  <div class="grid-det-item">
-                    <a
-                      href="project-single.html"
-                      class="ajax grid-det_link"
-                      >Fitness Studio Website<i
-                        class="fal fa-long-arrow-right"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php 
+              // Get the projects
+              $args = array (
+                'post_type' => 'project',
+                'posts_per_page' => 8
+              );
+              $project_query = new WP_Query($args);
+              if($project_query->have_posts()) {
+                while($project_query->have_posts()) {
+                  $project_query->the_post();
+
+                  // get the categories for each project
+                  $project_categories = get_the_terms($post->ID, 'category');
+
+                  // $taxonomies = get_object_taxonomies('project');
+                  // print_r($taxonomies);
+                  
+                  $class_names = array();
+                  if($project_categories) {
+                    foreach($project_categories as $category) {
+                      $class_names[] = $category->slug;
+                    }
+                  }
+                  ?>
+                    <div class="gallery-item <?php echo join(' ', $class_names); ?>">
+                      <div class="grid-item-holder hov_zoom">
+                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php esc_html(the_title(), 'shadin') ?>" />
+                        <div class="grid-det">
+                          <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="grid-media-zoom image-popup" >
+                            <i class="far fa-search"></i>
+                          </a>
+                          <div class="grid-det_category">
+                            <?php
+                              if ($project_categories) {
+                                  foreach ($project_categories as $category) {
+                                      echo '<a href="' . get_term_link($category->term_id) . '" class="' . $category->slug . '">' . $category->name . '</a>';
+                                  }
+                              }
+                            ?>
+                            <!-- <a href="#"> Branding</a> -->
+                          </div>
+                          <div class="grid-det-item">
+                            <a href="<?php the_permalink(); ?>"class="ajax grid-det_link">
+                              <?php esc_html(the_title(), 'shadin') ?>
+                              <i class="fal fa-long-arrow-right"></i
+                            ></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <?php
+                }
+                wp_reset_postdata();
+              } else {
+                echo 'No Projects found';
+              }
+            ?>
             <!-- gallery-item end-->
-            <!-- gallery-item-->
-            <div class="gallery-item photography uides">
+            <!-- gallery-item -->
+            <!-- <div class="gallery-item photography ecommerce-website">
               <div class="grid-item-holder hov_zoom">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/folio/2.jpg" alt="" />
                 <div class="grid-det">
@@ -103,10 +173,10 @@ get_header();
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- gallery-item end-->
             <!-- gallery-item-->
-            <div class="gallery-item web">
+            <!-- <div class="gallery-item web">
               <div class="grid-item-holder hov_zoom">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/folio/3.jpg" alt="" />
                 <div class="grid-det">
@@ -129,10 +199,10 @@ get_header();
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- gallery-item end-->
             <!-- gallery-item-->
-            <div class="gallery-item branding photography">
+            <!-- <div class="gallery-item ecommerce-website photography">
               <div class="grid-item-holder hov_zoom">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/folio/4.jpg" alt="" />
                 <div class="grid-det">
@@ -155,10 +225,10 @@ get_header();
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- gallery-item end-->
             <!-- gallery-item-->
-            <div class="gallery-item uides web">
+            <!-- <div class="gallery-item uides web">
               <div class="grid-item-holder hov_zoom">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/folio/5.jpg" alt="" />
                 <div class="grid-det">
@@ -181,10 +251,10 @@ get_header();
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- gallery-item end-->
             <!-- gallery-item-->
-            <div class="gallery-item branding">
+            <!-- <div class="gallery-item branding">
               <div class="grid-item-holder hov_zoom">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/folio/6.jpg" alt="" />
                 <div class="grid-det">
@@ -207,10 +277,10 @@ get_header();
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- gallery-item end-->
             <!-- gallery-item-->
-            <div class="gallery-item uides">
+            <!-- <div class="gallery-item uides">
               <div class="grid-item-holder hov_zoom">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/folio/7.jpg" alt="" />
                 <div class="grid-det">
@@ -233,10 +303,10 @@ get_header();
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- gallery-item end-->
             <!-- gallery-item-->
-            <div class="gallery-item web photography">
+            <!-- <div class="gallery-item web photography">
               <div class="grid-item-holder hov_zoom">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/folio/8.jpg" alt="" />
                 <div class="grid-det">
@@ -259,7 +329,7 @@ get_header();
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- gallery-item end-->
           </div>
           <!-- project end -->

@@ -14,7 +14,7 @@ get_header();
       <div
         class="content"
         data-pagetitle="Project Single"
-        data-pagesubtitle="Project"
+        data-pagesubtitle="<?php echo esc_html('Project Details'); ?>"
       >
         <div class="bg-top"></div>
         <div class="bg-bottom"></div>
