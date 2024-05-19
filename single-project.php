@@ -13,15 +13,15 @@ get_header();
     <div class="scr-bar_container">
       <div
         class="content"
-        data-pagetitle="Project Single"
-        data-pagesubtitle="<?php echo esc_html('Project Details'); ?>"
+        data-pagetitle="<?php echo esc_html('Project Details', 'shadin'); ?>"
+        data-pagesubtitle="<?php echo esc_html('Project Details', 'shadin'); ?>"
       >
         <div class="bg-top"></div>
         <div class="bg-bottom"></div>
         <!--section  -->
         <section>
           <div class="section-title fl-wrap">
-            <h3>Project Project Title</h3>
+            <h3><?php esc_html(the_title(), 'shadin') ?></h3>
           </div>
           <div class="center-carousel-wrap fl-wrap">
             <div class="center-carousel fl-wrap">
@@ -85,19 +85,34 @@ get_header();
             <div class="row">
               <div class="col-md-8">
                 <div class="fl-wrap content-box single_pb">
-                  <h4 class="bold-title">Project Info</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Dolore magna aliqua.
-                  </p>
+                  <h4 class="bold-title"><?php echo esc_html('Project Info', 'shadin'); ?></h4>
+                  <?php echo the_content(); ?>
+                  <?php $project_category = get_the_category();
+                        
+                        if($project_category) {
+                          foreach($project_category as $category) {
+                            $project_categories[] = $category->name;
+                            echo "<pre>";
+                            var_dump($project_categories);
+                            echo join(' ', $project_categories);
+                            echo "</pre>";
+                          }
+                        }
+
+                        // echo "<pre>";
+                        // var_dump($project_categories);
+                        // echo "</pre>";
+                  ?>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="box-text-wrap_item content-box">
-                  <h5>Project Details</h5>
+                  <h5><?php echo esc_html('Project Details', 'shadin'); ?></h5>
+                  <?php $category = get_the_category();
+                        // $firstCategory = $category[0]->cat_name; 
+                        // echo $firstCategory;
+                        // var_dump($category);
+                  ?>
                   <ul>
                     <li><span>Category : Branding</span></li>
                     <li><span>Date : 02.03.2022</span></li>
