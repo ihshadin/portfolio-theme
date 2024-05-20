@@ -13,8 +13,8 @@ get_header();
     <div class="scr-bar_container">
       <div
         class="content"
-        data-pagetitle="<?php echo esc_html('Project Details', 'shadin'); ?>"
-        data-pagesubtitle="<?php echo esc_html('Project', 'shadin'); ?>"
+        data-pagetitle="<?php echo esc_attr('Project Details', 'shadin'); ?>"
+        data-pagesubtitle="<?php echo esc_attr('Project', 'shadin'); ?>"
       >
         <div class="bg-top"></div>
         <div class="bg-bottom"></div>
@@ -25,7 +25,7 @@ get_header();
           </div>
           <?php
           global $post;	
-          $gallery_data  = get_post_meta( $post->ID, 'gallery_data', true );
+          $gallery_data  = get_post_meta( get_the_ID(), 'gallery_data', true );
 
           if (isset($gallery_data['image_url']) && !empty($gallery_data['image_url'])) { ?> 
             <div class="center-carousel-wrap fl-wrap">
@@ -64,22 +64,6 @@ get_header();
                 <div class="fl-wrap content-box single_pb project_info">
                   <h4 class="bold-title"><?php echo esc_html('Project Info', 'shadin'); ?></h4>
                   <?php echo the_content(); ?>
-                  <?php //$project_category = get_the_category();
-                        
-                        // if($project_category) {
-                        //   foreach($project_category as $category) {
-                        //     $project_categories[] = $category->name;
-                        //     echo "<pre>";
-                        //     var_dump($project_categories);
-                        //     echo join(', ', $project_categories);
-                        //     echo "</pre>";
-                        //   }
-                        // }
-
-                        // echo "<pre>";
-                        // var_dump($project_categories);
-                        // echo "</pre>";
-                  ?>
                 </div>
               </div>
               <div class="col-md-4">
@@ -108,22 +92,58 @@ get_header();
                       }
                     }
                     // project live url
-                    $project_live_url = get_post_meta(get_the_ID(), 'website_live_url', true)
+                    $project_live_url = get_post_meta(get_the_ID(), 'website_live_url', true);
+                    // project github client url
+                    $website_front_end_github = get_post_meta(get_the_ID(), 'website_front_end_github', true);
+                    // project github backend url
+                    $website_back_end_github = get_post_meta(get_the_ID(), 'website_back_end_github', true);
                   ?>
                   <ul>
-                    <?php if($project_categories) { ?>
+                    <?php 
+                    if($project_categories) { ?>
                       <li><span>Category : <?php echo join(', ', $project_categories_list) ?></span></li>
-                    <?php } ?>
-                    <?php if($project_type) { ?>
+                    <?php } 
+                    
+                    if($project_type) { ?>
                       <li><span>Project Type : <?php echo join(', ', $project_type_list) ?></span></li>
-                    <?php } ?>
-                    <?php if($work_type) { ?>
+                    <?php }
+                    
+                    if($work_type) { ?>
                       <li><span>My Role : <?php echo join(', ', $work_type_list) ?></span></li>
-                    <?php } ?>
-                    <?php if($project_live_url) { ?>
+                    <?php } 
+
+                    if($project_live_url) { ?>
                       <li><span>Live Link : <a href="<?php echo esc_url($project_live_url) ?>" target="_blank"><?php echo esc_html('Click here...', 'shadin') ?></a> </span></li>
+                    <?php }
+                    
+                    if($website_front_end_github || $website_back_end_github) { ?>
+                      <li>
+                        <span>GitHub : 
+                          <?php if ($website_front_end_github) { ?> 
+                              <a href="<?php echo esc_url($website_front_end_github) ?>" target="_blank"><?php echo esc_html('front end', 'shadin') ?></a>,
+                          <?php } ?> 
+                          <?php if ($website_back_end_github) { ?> 
+                              <a href="<?php echo esc_url($website_back_end_github) ?>" target="_blank"><?php echo esc_html('back end', 'shadin') ?></a>
+                          <?php } ?> 
+                        </span>
+                      </li>
                     <?php } ?>
+
                   </ul>
+                </div>
+                <div class="box-text-wrap_item content-box used_tools_container">
+                  <h5><?php echo esc_html('Used Tools/Technologies', 'shadin'); ?></h5>
+                  <?php
+                    // Project Work Type
+                    $used_tools = get_the_terms(get_the_ID(), 'used_tools');
+                    if($used_tools) {
+                      foreach($used_tools as $single_used_tools) {
+                      ?>
+                        <span class="used_tools_item"><?php echo esc_html($single_used_tools->name, 'shadin') ?></span>
+                        <?php
+                      }
+                    }
+                  ?>
                 </div>
               </div>
             </div>

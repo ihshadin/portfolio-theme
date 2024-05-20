@@ -9,13 +9,42 @@ add_action('add_meta_boxes', 'add_meta_fields_for_project');
 // Render Meta Box Content
 function additional_info_callback($post) {
 ?>
-    <!-- Project Live Url -->
-    <p class="field-live_url description description-wide">
-        <label for="website_live_url">
-            <h5 class="info_project_heading"><?php _e('Website Live URL', 'shadin'); ?></h5>
-            <input type='url' id="website_live_url" class="widefat" name="website_live_url" value="<?php echo esc_attr(get_post_meta( $post->ID, 'website_live_url', true)); ?>" />
-        </label>
-    </p>
+    <style type="text/css">
+    .website_links_container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    .info_project_heading {
+        margin: 0 0 7px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+    .website_links_container p {
+        margin: 3px 0 8px;
+        font-size: 12px;
+    }
+    </style>
+    <!-- Project Url -->
+    <div class="website_links_container">
+        <div class="field-live_url description description-wide">
+            <label for="website_live_url" class="info_project_heading"><?php _e('Website Live URL', 'shadin'); ?></label>
+            <p>Add Live URL of your project's</p>
+            <input type='url' id="website_live_url" class="widefat" name="website_live_url" value="<?php echo esc_attr(get_post_meta( $post->ID, 'website_live_url', true)); ?>" placeholder="Input Live URL" />
+        </div>
+        <div class="field-front_end_github description description-wide" style="display: none;">
+            <label for="website_front_end_github" class="info_project_heading"><?php _e('Front-end GitHub url', 'shadin'); ?></label>
+            <p>Add front-end github link of your project's</p>
+            <input type='url' id="website_front_end_github" class="widefat" name="website_front_end_github" value="<?php echo esc_attr(get_post_meta( $post->ID, 'website_front_end_github', true)); ?>" placeholder="Input Frontend GitHub URL" />
+        </div>
+        <div class="field-back_end_github description description-wide" style="display: none;">
+            <label for="website_back_end_github" class="info_project_heading"><?php _e('Back-end GitHub url', 'shadin'); ?></label>
+            <p>Add back-end github link of your project's</p>
+            <input type='url' id="website_back_end_github" class="widefat" name="website_back_end_github" value="<?php echo esc_attr(get_post_meta( $post->ID, 'website_back_end_github', true)); ?>" placeholder="Input Backend GitHub URL" />
+        </div>
+    </div>
+
     <!-- Project images gallery -->
     <?php
     wp_nonce_field('project_gallery_metabox', 'project_gallery_nonce');
@@ -65,11 +94,6 @@ function property_gallery_styles_scripts($hook) {
         if ('project' === $post->post_type) {
             ?>
             <style type="text/css">
-                .info_project_heading {
-                    margin: 0 0 7px;
-                    font-size: 14px;
-                    font-weight: 600;
-                } 
                 .gallery_area {
                     float: right;
                 }
@@ -218,14 +242,19 @@ function save_additional_info_data($post_id) {
         return;
     }
 
-    // Save Data
+    // website live url
     if(isset($_POST['website_live_url'])) {
         update_post_meta( $post_id, 'website_live_url', sanitize_text_field($_POST['website_live_url'])); 
     }
+    // website live url
+    if(isset($_POST['website_front_end_github'])) {
+        update_post_meta( $post_id, 'website_front_end_github', sanitize_text_field($_POST['website_front_end_github'])); 
+    }
+    // website live url
+    if(isset($_POST['website_back_end_github'])) {
+        update_post_meta( $post_id, 'website_back_end_github', sanitize_text_field($_POST['website_back_end_github'])); 
+    }
 
-    // if (isset($_POST['gallery']['image_url'])) {
-    //     update_post_meta($post_id, 'gallery_data', ['image_url' => array_map('esc_url_raw', $_POST['gallery']['image_url'])]);
-    // } 
     if (isset($_POST['gallery']['image_url'])) {
         $image_urls = array_filter($_POST['gallery']['image_url'], function($url) {
             return !empty($url);

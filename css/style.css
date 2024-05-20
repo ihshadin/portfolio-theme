@@ -562,7 +562,7 @@ p {
 }
 nav.nav-inner {
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 10px;
   box-shadow: 0 1px 8px 0 rgb(15 15 20 / 30%);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -666,7 +666,7 @@ nav.nav-inner {
   height: 40px;
   line-height: 40px;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 10px;
   box-shadow: 0px 0px 0px 6px rgb(255 255 255 / 10%);
   transition: all 300ms linear;
 }
@@ -1059,7 +1059,7 @@ section {
   margin-top: -130px;
   right: 20px;
   z-index: 100;
-  border-radius: 6px;
+  border-radius: 10px;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1141,7 +1141,7 @@ section {
 .services-item {
   padding: 90px 40px 30px;
   margin-bottom: 30px;
-  border-radius: 6px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .serv-sec {
@@ -1229,7 +1229,7 @@ section {
   width: 100%;
   position: relative;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .testi-item p:before {
@@ -1488,7 +1488,7 @@ canvas {
   -webkit-text-stroke-width: 1px;
   color: rgba(255, 255, 255, 0.01);
   text-shadow: 4px 4px 2px rgba(150, 150, 150, 0.02);
-  font-size: 124px;
+  font-size: 70px;
   text-align: left;
   width: 100%;
   font-weight: bold;
@@ -1517,8 +1517,8 @@ canvas {
 }
 .box-text-wrap_item,
 .resume-item {
-  padding: 15px 30px;
-  border-radius: 6px;
+  padding: 15px;
+  border-radius: 8px;
 }
 .cb_dec:before {
   font-family: Font Awesome\5 Pro;
@@ -1788,7 +1788,7 @@ canvas {
 }
 .content-nav {
   z-index: 2;
-  border-radius: 6px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .content-nav li {
@@ -1866,7 +1866,7 @@ canvas {
   transition: all 100ms linear;
   z-index: 2;
   padding: 8px;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .content-nav_mediatooltip:after {
   bottom: -14px;
@@ -2026,7 +2026,7 @@ canvas {
   overflow: hidden;
   margin-bottom: 20px;
   transition: all 0.3s ease-in-out;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .card-item:before {
   content: "";
@@ -2209,7 +2209,7 @@ canvas {
 .content-box,
 .post {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .single_pb {
   padding: 30px 30px 15px;
@@ -2256,6 +2256,20 @@ canvas {
 }
 .single_pb.project_info li::marker {
   color: #f89020;
+}
+.used_tools_container {
+  margin-top: 20px;
+  text-align: left;
+}
+.used_tools_container .used_tools_item {
+  border: 1px solid #f8902065;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-weight: 300;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  display: inline-block;
 }
 .post-media {
   margin-bottom: 30px;
@@ -2308,7 +2322,7 @@ canvas {
 .search {
   border: 1px solid rgba(255, 255, 255, 0.1);
   float: left;
-  border-radius: 6px;
+  border-radius: 10px;
   position: relative;
   outline: none;
   padding: 0px 0px 0px 20px;
@@ -2351,7 +2365,7 @@ canvas {
   width: 30%;
 }
 .widget-posts-img img {
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .widget-posts-descr {
   float: left;
@@ -2586,7 +2600,7 @@ canvas {
   width: 40px;
   height: 40px;
   float: left;
-  border-radius: 6px;
+  border-radius: 10px;
   position: relative;
   z-index: 2;
 }
@@ -2596,7 +2610,7 @@ canvas {
   position: relative;
   padding: 25px 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
+  border-radius: 10px;
 }
 .comment-num {
   position: absolute;

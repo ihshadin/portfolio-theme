@@ -124,7 +124,7 @@ function shadin_scripts() {
 	// jQuery js
 	wp_enqueue_script( 'jQuery-js', get_template_directory_uri() . '/js/jquery.min.js', array('jquery'), _S_VERSION, true );
 	// Enqueue jQuery from the WordPress core
-	// wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery');
 	// plugins js
 	wp_enqueue_script( 'plugins-js', get_template_directory_uri() . '/js/plugins.js', array('jquery'), _S_VERSION, true );
 	// main scripts
@@ -135,6 +135,15 @@ function shadin_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'shadin_scripts' );
+
+// Admin Scripts
+function enqueue_custom_admin_script() {
+	// Enqueue jQuery
+    wp_enqueue_script('jquery');
+	
+    wp_enqueue_script( 'admin-scripts', get_template_directory_uri() . '/js/admin-scripts.js', array('jquery'), _S_VERSION, true );
+}
+add_action('admin_enqueue_scripts', 'enqueue_custom_admin_script');
 
 // Implement the Custom Header feature.
 // require get_template_directory() . '/inc/custom-header.php';
