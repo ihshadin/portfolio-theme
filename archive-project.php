@@ -13,31 +13,11 @@ get_header();
     <div class="scr-bar_container">
       <div
         class="content"
-        data-pagetitle="My Project"
-        data-pagesubtitle="Project"
+        data-pagetitle="My Projects"
+        data-pagesubtitle="Projects"
       >
         <div class="bg-top"></div>
-        <div class="bg-bottom"></div>
-
-        <?php
-          // $categories = get_terms('category', array(
-          //   'hide_empty' => 0,
-          //   'orderby' => 'ASC',
-          // ));
-
-          // echo '<pre>';
-          // var_dump($categories);
-          // echo '</pre>';
-            
-          // foreach($categories as $category){
-          //   $cat = get_category( $category );
-          //   $cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
-          //   echo '<pre>';
-          //   print_r($category);
-          //   echo '</pre>';
-          // }
-        ?>
-            
+        <div class="bg-bottom"></div>        
         <!--section  -->
         <section>
           <div class="section-title fl-wrap">
@@ -55,36 +35,16 @@ get_header();
                     'hide_empty' => 0,
                     'orderby' => 'ASC',
                   ));
-
-                  // echo '<pre>';
-                  // var_dump($categories);
-                  // echo '</pre>';
-                    
                   foreach($categories as $category) {
                     $name = $category->name;
                     $slug = $category->slug;
                     ?>
-                      <a href="<?php echo esc_url($slug); ?>" class="gallery-filter" data-filter=".<?php echo $slug ?>"
-                        ><?php echo esc_html($name, 'shadin'); ?></a
-                      >
+                      <a href="<?php echo esc_url($slug); ?>" class="gallery-filter" data-filter=".<?php echo $slug ?>">
+                        <?php echo esc_html($name, 'shadin'); ?>
+                      </a>
                     <?php
                   }
                 ?>
-                <!-- <a
-                  href="#"
-                  class="gallery-filter"
-                  data-filter=".photography"
-                  >Photo</a
-                >
-                <a
-                  href="#"
-                  class="gallery-filter"
-                  data-filter=".branding"
-                  >Branding</a
-                >
-                <a href="#" class="gallery-filter" data-filter=".uides"
-                  >Ui Design</a
-                > -->
               </div>
             </div>
           </div>
@@ -104,9 +64,6 @@ get_header();
 
                   // get the categories for each project
                   $project_categories = get_the_terms($post->ID, 'category');
-
-                  // $taxonomies = get_object_taxonomies('project');
-                  // print_r($taxonomies);
                   
                   $class_names = array();
                   if($project_categories) {
@@ -130,13 +87,12 @@ get_header();
                                   }
                               }
                             ?>
-                            <!-- <a href="#"> Branding</a> -->
                           </div>
                           <div class="grid-det-item">
                             <a href="<?php the_permalink(); ?>"class="ajax grid-det_link">
                               <?php esc_html(the_title(), 'shadin') ?>
-                              <i class="fal fa-long-arrow-right"></i
-                            ></a>
+                              <i class="fal fa-long-arrow-right"></i>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -148,189 +104,6 @@ get_header();
                 echo 'No Projects found';
               }
             ?>
-            <!-- gallery-item end-->
-            <!-- gallery-item -->
-            <!-- <div class="gallery-item photography ecommerce-website">
-              <div class="grid-item-holder hov_zoom">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/2.jpg" alt="" />
-                <div class="grid-det">
-                  <a
-                    href="<?php echo get_template_directory_uri(); ?>/images/folio/2.jpg"
-                    class="grid-media-zoom image-popup"
-                    ><i class="far fa-search"></i
-                  ></a>
-                  <div class="grid-det_category">
-                    <a href="#">Design </a> <a href="#"> UI/UX</a>
-                  </div>
-                  <div class="grid-det-item">
-                    <a
-                      href="project-single.html"
-                      class="ajax grid-det_link"
-                      >Architecture Agensy<i
-                        class="fal fa-long-arrow-right"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- gallery-item end-->
-            <!-- gallery-item-->
-            <!-- <div class="gallery-item web">
-              <div class="grid-item-holder hov_zoom">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/3.jpg" alt="" />
-                <div class="grid-det">
-                  <a
-                    href="https://vimeo.com/6698875"
-                    class="grid-media-zoom image-popup"
-                    ><i class="far fa-play"></i
-                  ></a>
-                  <div class="grid-det_category">
-                    <a href="#">Design </a> <a href="#"> Photography</a>
-                  </div>
-                  <div class="grid-det-item">
-                    <a
-                      href="project-single.html"
-                      class="ajax grid-det_link"
-                      >Video Project<i
-                        class="fal fa-long-arrow-right"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- gallery-item end-->
-            <!-- gallery-item-->
-            <!-- <div class="gallery-item ecommerce-website photography">
-              <div class="grid-item-holder hov_zoom">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/4.jpg" alt="" />
-                <div class="grid-det">
-                  <a
-                    href="<?php echo get_template_directory_uri(); ?>/images/folio/4.jpg"
-                    class="grid-media-zoom image-popup"
-                    ><i class="far fa-search"></i
-                  ></a>
-                  <div class="grid-det_category">
-                    <a href="#">Design </a> <a href="#"> Branding</a>
-                  </div>
-                  <div class="grid-det-item">
-                    <a
-                      href="project-single.html"
-                      class="ajax grid-det_link"
-                      >Photography Project<i
-                        class="fal fa-long-arrow-right"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- gallery-item end-->
-            <!-- gallery-item-->
-            <!-- <div class="gallery-item uides web">
-              <div class="grid-item-holder hov_zoom">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/5.jpg" alt="" />
-                <div class="grid-det">
-                  <a
-                    href="<?php echo get_template_directory_uri(); ?>/images/folio/5.jpg"
-                    class="grid-media-zoom image-popup"
-                    ><i class="far fa-search"></i
-                  ></a>
-                  <div class="grid-det_category">
-                    <a href="#">Design </a> <a href="#"> Branding</a>
-                  </div>
-                  <div class="grid-det-item">
-                    <a
-                      href="project-single.html"
-                      class="ajax grid-det_link"
-                      >Kent Brant Concept<i
-                        class="fal fa-long-arrow-right"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- gallery-item end-->
-            <!-- gallery-item-->
-            <!-- <div class="gallery-item branding">
-              <div class="grid-item-holder hov_zoom">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/6.jpg" alt="" />
-                <div class="grid-det">
-                  <a
-                    href="<?php echo get_template_directory_uri(); ?>/images/folio/6.jpg"
-                    class="grid-media-zoom image-popup"
-                    ><i class="far fa-search"></i
-                  ></a>
-                  <div class="grid-det_category">
-                    <a href="#">Design </a> <a href="#"> Branding</a>
-                  </div>
-                  <div class="grid-det-item">
-                    <a
-                      href="project-single.html"
-                      class="ajax grid-det_link"
-                      >Corporate website<i
-                        class="fal fa-long-arrow-right"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- gallery-item end-->
-            <!-- gallery-item-->
-            <!-- <div class="gallery-item uides">
-              <div class="grid-item-holder hov_zoom">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/7.jpg" alt="" />
-                <div class="grid-det">
-                  <a
-                    href="<?php echo get_template_directory_uri(); ?>/images/folio/7.jpg"
-                    class="grid-media-zoom image-popup"
-                    ><i class="far fa-search"></i
-                  ></a>
-                  <div class="grid-det_category">
-                    <a href="#">Design </a> <a href="#"> Branding</a>
-                  </div>
-                  <div class="grid-det-item">
-                    <a
-                      href="project-single.html"
-                      class="ajax grid-det_link"
-                      >Travel Agensy<i
-                        class="fal fa-long-arrow-right"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- gallery-item end-->
-            <!-- gallery-item-->
-            <!-- <div class="gallery-item web photography">
-              <div class="grid-item-holder hov_zoom">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/folio/8.jpg" alt="" />
-                <div class="grid-det">
-                  <a
-                    href="<?php echo get_template_directory_uri(); ?>/images/folio/8.jpg"
-                    class="grid-media-zoom image-popup"
-                    ><i class="far fa-search"></i
-                  ></a>
-                  <div class="grid-det_category">
-                    <a href="#">Design </a> <a href="#"> Branding</a>
-                  </div>
-                  <div class="grid-det-item">
-                    <a
-                      href="project-single.html"
-                      class="ajax grid-det_link"
-                      >Sport Agensy<i
-                        class="fal fa-long-arrow-right"
-                      ></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- gallery-item end-->
           </div>
           <!-- project end -->
         </section>
