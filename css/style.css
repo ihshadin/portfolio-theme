@@ -2491,6 +2491,59 @@ canvas {
   margin-bottom: 20px;
   width: 100%;
 }
+.box-text-wrap .single_post_content {
+  text-align: left;
+  color: #fff;
+}
+.box-text-wrap .single_post_content p {
+  margin-bottom: 10px;
+}
+.box-text-wrap .single_post_content img {
+  max-width: 100%;
+  height: auto;
+}
+.single_post_content h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+.single_post_content h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+.single_post_content h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+.single_post_content h4,
+.single_post_content h5,
+.single_post_content h6 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+.single_post_content p,
+.single_post_content li {
+  color: rgba(255, 255, 255, 0.7);
+}
+.single_post_content ul {
+  list-style: circle;
+  padding-left: 15px;
+}
+.single_post_content ol {
+  list-style: decimal;
+  padding-left: 15px;
+}
+.single_post_content li::marker {
+  color: #f89020;
+}
+
 .post-opt li,
 .cat-item li {
   float: left;

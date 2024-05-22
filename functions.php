@@ -179,3 +179,6 @@ require get_template_directory() . '/inc/custom-texonomies.php';
 
 // Custom Meta Box Add for Post Type
 require get_template_directory() . '/inc/custom-metabox.php';
+
+// this is comment format
+require get_template_directory() . '/template-parts/comment_format.php';

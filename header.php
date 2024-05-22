@@ -65,7 +65,6 @@
 									'menu'         => 'primary-menu',
 									'container'    => false,
 								);
-
 								// Output the menu
 								wp_nav_menu($menu_args);
 							?>
@@ -84,10 +83,19 @@
 						<a href="<?php echo esc_url(site_url()); ?>" class="ajax"><i class="fal fa-home"></i></a><span>Home</span>
 					</div>
                     <a href="<?php echo esc_url(site_url()); ?>" class="ajax mob-logo"><span></span><strong></strong></a>
-                    <a href="<?php echo esc_url('/contact'); ?>" class="ajax to_contacts"><i class="far fa-envelope"></i><?php echo esc_html('Get in Touch', 'shadin') ?></a>
+                    <a href="<?php echo esc_url('/contact'); ?>" class="ajax to_contacts">
+                        <i class="far fa-envelope"></i><?php echo esc_html('Get in Touch', 'shadin') ?>
+                    </a>
                     <div class="share-btn show-share isShare gradient-bg2">
                         <span><?php echo esc_html('Share', 'shadin') ?></span>
                         <i class="fas fa-share-alt"></i>
                     </div>
                 </div>
                 <!-- top-opt end -->
+                <!-- content-holder -->
+                <div class="content-holder">
+                    <!--wrapper -->
+                    <div id="wrapper">
+                    <!--scroll-bar -->
+                        <div class="scr-bar_dec"></div>
+                        <div class="scr-bar_container">

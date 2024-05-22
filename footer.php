@@ -3,6 +3,28 @@
  * The template for displaying the footer
  */
 ?>
+						<div class="to-top-wrap">
+							<div class="to-top color-bg">
+								<i class="fas fa-caret-up"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--scroll-bar end -->
+				<!--share end -->
+				<div class="share-wrapper">
+					<div class="share-container isShare"></div>
+				</div>
+				<!--share end -->
+				</div>
+				<!--wrapper end -->
+				<!--page-load -->
+				<div class="page-load">
+					<div class="pl-spinner"><span></span></div>
+				</div>
+				<!--page-load end -->
+			</div>
+			<!-- content-holder end -->
 			<!-- footer -->
 			<footer class="main-footer">
 				<div class="footer-social">

@@ -19,59 +19,43 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-
-<div id="comments" class="comments-area">
-
+<div class="fl-wrap content-box">
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
-			<?php
+		<div class="pr-subtitle">
+			<?php 
 			$shadin_comment_count = get_comments_number();
 			if ( '1' === $shadin_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'shadin' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
+				echo esc_html('Comment', 'shadin');
 			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $shadin_comment_count, 'comments title', 'shadin' ) ),
-					number_format_i18n( $shadin_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
+				echo esc_html('Comments', 'shadin');
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</div>
+		<div id="comments" class="single-post-comm fl-wrap">
+			<?php if (have_comments()) : ?>
+				<ul class="commentlist clearafix">
+					<?php
+					wp_list_comments(array(
+						'style'      => 'ul',
+						'short_ping' => true,
+						'avatar_size' => 50,
+						'callback'   => 'my_custom_comment_format',
+					));
+					?>
+				</ul>
+				<?php the_comments_navigation(); ?>
+			<?php endif; ?>
 
-		<?php the_comments_navigation(); ?>
-
-		<ol class="comment-list">
 			<?php
-			wp_list_comments(
-				array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				)
-			);
-			?>
-		</ol><!-- .comment-list -->
-
-		<?php
-		the_comments_navigation();
-
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'shadin' ); ?></p>
-			<?php
-		endif;
-
-	endif; // Check for have_comments().
-
+			if (!comments_open() && get_comments_number()) : ?>
+				<p class="no-comments"><?php _e('Comments are closed.', 'textdomain'); ?></p>
+			<?php endif; ?>
+		</div>
+	<?php
+	endif; 
 	comment_form();
 	?>
-
-</div><!-- #comments -->
+</div>
