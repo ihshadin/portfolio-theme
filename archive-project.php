@@ -13,8 +13,8 @@ get_header();
     <div class="scr-bar_container">
       <div
         class="content"
-        data-pagetitle="My Projects"
-        data-pagesubtitle="Projects"
+        data-pagetitle="<?php echo esc_attr('My Projects', 'shadin'); ?>"
+        data-pagesubtitle="<?php echo esc_attr('Projects', 'shadin'); ?>"
       >
         <div class="bg-top"></div>
         <div class="bg-bottom"></div>        
@@ -31,7 +31,7 @@ get_header();
                   >All</a
                 >
                 <?php
-                  $categories = get_terms('category', array(
+                  $categories = get_terms('project_category', array(
                     'hide_empty' => 0,
                     'orderby' => 'ASC',
                   ));
@@ -63,7 +63,7 @@ get_header();
                   $project_query->the_post();
 
                   // get the categories for each project
-                  $project_categories = get_the_terms($post->ID, 'category');
+                  $project_categories = get_the_terms($post->ID, 'project_category');
                   
                   $class_names = array();
                   if($project_categories) {

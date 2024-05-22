@@ -13,27 +13,26 @@ get_header();
     <div class="scr-bar_container">
       <div
         class="content"
-        data-pagetitle="Get In Touch"
-        data-pagesubtitle="Contacts"
+        data-pagetitle="<?php echo esc_attr('Get In Touch', 'shadin'); ?>"
+        data-pagesubtitle="<?php echo esc_attr('Contact', 'shadin'); ?>"
       >
         <div class="bg-top"></div>
         <div class="bg-bottom"></div>
         <section>
           <div class="section-title fl-wrap">
-            <h3>Contact Information</h3>
+            <h3><?php echo esc_html('Contact Information', 'shadin'); ?></h3>
           </div>
           <div class="row">
             <!--card-item -->
             <div class="col-md-6">
               <div class="card-item fl-wrap">
                 <i class="fal fa-envelope"></i>
-                <span class="card-item_num">01.</span>
-                <h4>My Emails</h4>
+                <span class="card-item_num"><?php echo esc_html('01.', 'shadin'); ?></span>
+                <h4><?php echo esc_html('My Emails', 'shadin'); ?></h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit.
+                  <?php echo esc_html("Feel Free to send email to me. I am always open to discuss about new projects", "shadin") ?>
                 </p>
-                <a href="#" class="card-link">yourmail@domain.com</a>
+                <a href="mailto:ihshadin3453@gmail.com" class="card-link"><?php echo esc_html('ihshadin3453@gmail.com', 'shadin'); ?></a>
               </div>
             </div>
             <!--card-item end -->
@@ -41,14 +40,12 @@ get_header();
             <div class="col-md-6">
               <div class="card-item fl-wrap">
                 <i class="fas fa-phone"></i>
-                <span class="card-item_num">02.</span>
-                <h4>My Phones</h4>
+                <span class="card-item_num"><?php echo esc_html('02.', 'shadin'); ?></span>
+                <h4><?php echo esc_html('My Phones', 'shadin'); ?></h4>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit.
+                  <?php echo esc_html("Feel Free Call to me. I am always open to discuss about new projects", "shadin") ?>
                 </p>
-                <a href="#" class="card-link">+7(111)123456789</a>
-                <a href="#" class="card-link">+3(333)987654321</a>
+                <a href="tel:+8801858733453" class="card-link"><?php echo esc_html('+880 1858-733453', 'shadin'); ?></a>
               </div>
             </div>
             <!--card-item end -->
@@ -56,22 +53,17 @@ get_header();
         </section>
         <section>
           <div class="section-title fl-wrap">
-            <h3>Write me Mesagge</h3>
+            <h3><?php echo esc_html('Write me Message', 'shadin'); ?></h3>
           </div>
           <!--contact-form-wrap -->
           <div class="contact-form-wrap">
             <div id="contact-form" class="contact-form fl-wrap">
               <div id="message"></div>
-              <form
-                class="custom-form"
-                action="https://vbook.kwst.net/php/contact.php"
-                name="contactform"
-                id="contactform"
-              >
-                <fieldset>
+              <div class="custom-form" name="contactform" id="contactform" >
+                <!-- <fieldset>
                   <div class="input-wrap">
-                    <i class="far fa-user-plus"></i
-                    ><input
+                    <i class="far fa-user-plus"></i>
+                    <input
                       type="text"
                       name="name"
                       id="name"
@@ -80,8 +72,8 @@ get_header();
                     />
                   </div>
                   <div class="input-wrap">
-                    <i class="far fa-envelope"></i
-                    ><input
+                    <i class="far fa-envelope"></i>
+                    <input
                       type="text"
                       name="email"
                       id="email"
@@ -90,8 +82,8 @@ get_header();
                     />
                   </div>
                   <div class="input-wrap">
-                    <i class="far fa-comment-alt"></i
-                    ><textarea
+                    <i class="far fa-comment-alt"></i>
+                    <textarea
                       name="comments"
                       id="comments"
                       cols="40"
@@ -102,8 +94,9 @@ get_header();
                 </fieldset>
                 <button class="btn float-btn color-bg" id="submit">
                   <span>Send Message</span>
-                </button>
-              </form>
+                </button> -->
+                <?php echo do_shortcode('[contact-form-7 id="19c0b62" title="Contact form"]') ?>
+              </div>
             </div>
             <!-- contact form  end-->
           </div>

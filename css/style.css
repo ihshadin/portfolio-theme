@@ -2066,7 +2066,7 @@ canvas {
   font-weight: 600;
   font-size: 11px;
   margin-right: 6px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 .card-item i {
   position: absolute;
@@ -2107,7 +2107,7 @@ canvas {
 }
 .input-wrap {
   margin-bottom: 20px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 .input-wrap i {
   position: absolute;
@@ -2136,17 +2136,17 @@ canvas {
 }
 .custom-form input::-webkit-input-placeholder,
 .custom-form textarea::-webkit-input-placeholder {
-  color: #fff;
-  font-weight: 600;
-  font-size: 11px;
+  color: #ffffff9a;
+  font-weight: 4600;
+  font-size: 12px;
   position: relative;
   font-family: "Poppins", sans-serif;
 }
 .custom-form input:-moz-placeholder,
 .custom-form textarea:-moz-placeholder {
-  color: #fff;
-  font-weight: 600;
-  font-size: 10px;
+  color: #ffffff9a;
+  font-weight: 400;
+  font-size: 12px;
   text-transform: uppercase;
   position: relative;
   font-family: "Poppins", sans-serif;
@@ -2192,6 +2192,12 @@ canvas {
 }
 .error_message {
   padding-bottom: 15px;
+}
+.wpcf7-form-control-wrap {
+  position: relative;
+}
+.wpcf7-form-control-wrap .wpcf7-not-valid-tip {
+  position: absolute;
 }
 /*------blog------------------------------------------------*/
 .post .section-title {

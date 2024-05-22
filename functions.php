@@ -145,6 +145,9 @@ function enqueue_custom_admin_script() {
 }
 add_action('admin_enqueue_scripts', 'enqueue_custom_admin_script');
 
+// contact form 7 autofill off
+add_filter('wpcf7_autop_or_not', '__return_false');
+
 // Implement the Custom Header feature.
 // require get_template_directory() . '/inc/custom-header.php';
 

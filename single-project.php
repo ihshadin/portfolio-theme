@@ -71,7 +71,7 @@ get_header();
                   <h5><?php echo esc_html('Project Details', 'shadin'); ?></h5>
                   <?php 
                     // Project categories
-                    $project_categories = get_the_category();
+                    $project_categories = get_the_terms(get_the_ID(), 'project_category');
                     if($project_categories) {
                       foreach($project_categories as $category) {
                         $project_categories_list[] = $category->name;
@@ -131,20 +131,15 @@ get_header();
 
                   </ul>
                 </div>
-                <div class="box-text-wrap_item content-box used_tools_container">
-                  <h5><?php echo esc_html('Used Tools/Technologies', 'shadin'); ?></h5>
-                  <?php
-                    // Project Work Type
-                    $used_tools = get_the_terms(get_the_ID(), 'used_tools');
-                    if($used_tools) {
-                      foreach($used_tools as $single_used_tools) {
-                      ?>
+                <?php $used_tools = get_the_terms(get_the_ID(), 'used_tools');
+                  if($used_tools) { ?>
+                  <div class="box-text-wrap_item content-box used_tools_container">
+                    <h5><?php echo esc_html('Used Tools/Technologies', 'shadin'); ?></h5>
+                    <?php foreach($used_tools as $single_used_tools) { ?>
                         <span class="used_tools_item"><?php echo esc_html($single_used_tools->name, 'shadin') ?></span>
-                        <?php
-                      }
-                    }
-                  ?>
-                </div>
+                    <?php } ?>
+                  </div>
+                <?php } ?>
               </div>
             </div>
           </div>
@@ -153,8 +148,8 @@ get_header();
             <div class="content-nav fl-wrap">
               <ul>
                 <?php 
-                $prev_project = get_previous_post(true, '', 'category');
-                $next_project = get_next_post(true, '', 'category');
+                $prev_project = get_previous_post(true, '', 'project_category');
+                $next_project = get_next_post(true, '', 'project_category');
 
                 if(!empty($prev_project)) { 
                   $prev_project_id = $prev_project->ID;

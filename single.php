@@ -3,6 +3,7 @@
  * The template for displaying all blog single posts
  */
 get_header();
+visitor_counter(get_the_ID())
 ?>
 <!-- content-holder -->
 <div class="content-holder">

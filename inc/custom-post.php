@@ -38,7 +38,7 @@ function register_project_post_type() {
         'hierarchical'       => true,
         'menu_position'      => 5,
         'supports'           => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail' ),
-        'taxonomies'         => array( 'category', 'post_tag' ),
+        'taxonomies'         => array( 'project_category' ),
         'show_in_rest'       => true,
         'menu_icon'          => 'dashicons-format-gallery'
     );

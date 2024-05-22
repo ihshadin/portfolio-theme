@@ -1,13 +1,13 @@
 jQuery(document).ready(function ($) {
   function toggleGitHubFields() {
-    var selectedProjectType = $(
-      "#taxonomy-category #categorychecklist input:checked"
+    let selectedProjectType = $(
+      "#taxonomy-project_category #project_categorychecklist input:checked"
     )
       .map(function () {
         return $(this).closest("label").text().trim();
       })
       .get();
-
+    console.log(selectedProjectType);
     if (selectedProjectType.includes("MERN Stack")) {
       $(".field-front_end_github, .field-back_end_github").show();
     } else {
@@ -19,7 +19,9 @@ jQuery(document).ready(function ($) {
   toggleGitHubFields();
 
   // Check on change
-  $("#taxonomy-category #categorychecklist input").change(function () {
-    toggleGitHubFields();
-  });
+  $("#taxonomy-project_category #project_categorychecklist input").change(
+    function () {
+      toggleGitHubFields();
+    }
+  );
 });

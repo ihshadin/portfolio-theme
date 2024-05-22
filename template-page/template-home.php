@@ -10,13 +10,15 @@ get_header();
     <div id="wrapper">
         <!--scroll-bar -->
         <div class="scr-bar_container">
-            <div class="content" data-pagetitle="<?php echo esc_html('Imam Hossain Shadin', 'shadin') ?>" data-pagesubtitle="<?php echo esc_html('Home', 'shadin') ?>">
+            <div class="content" data-pagetitle="<?php echo esc_html('Imam Hossain Shadin', 'shadin') ?>"
+                data-pagesubtitle="<?php echo esc_html('Home', 'shadin') ?>">
                 <div class="bg-top"></div>
                 <div class="bg-bottom"></div>
                 <!--section   -->
                 <section class="hero-section">
                     <div class="bg-wrap hero-section_bg">
-                        <div class="bg" data-bg="<?php echo get_template_directory_uri(); ?>/images/bg/1.jpg"></div>
+                        <div class="bg" data-bg="<?php echo get_template_directory_uri(); ?>/images/bg/banner-bg-4.jpg">
+                        </div>
                     </div>
                     <div class="hero-section-title">
                         <div class="row">
@@ -31,12 +33,16 @@ get_header();
                                 </div>
                                 <h2><?php echo esc_html("Welcome to Shadin's Project Website", 'shadin'); ?></h2>
 
-                                <div class="video_btn-wrap fl-wrap"><a data-src="<?php echo esc_url('https://vimeo.com/176916362') ?>" class="image-popup gradient-bg"><i class="fas fa-play"></i></a><span><?php echo esc_html('Play  Video Presentation', 'shadin'); ?></span></div>
+                                <div class="video_btn-wrap fl-wrap"><a
+                                        data-src="<?php echo esc_url('https://vimeo.com/176916362') ?>"
+                                        class="image-popup gradient-bg"><i
+                                            class="fas fa-play"></i></a><span><?php echo esc_html('Play  Video Presentation', 'shadin'); ?></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- section end  -->							
+                <!-- section end  -->
                 <!--section   -->
                 <section>
                     <div class="row">
@@ -80,7 +86,7 @@ get_header();
                                         <h6><?php echo esc_html('Projects Completed', 'shadin') ?></h6>
                                     </div>
                                 </div>
-                                <!-- inline-facts end --> 
+                                <!-- inline-facts end -->
                             </div>
                         </div>
                         <div class="col-md-5">
@@ -95,12 +101,13 @@ get_header();
                                     <li><strong>Portfolio Website</strong><span>5+</span></li>
                                     <li><strong>Blog/Magazine Website</strong><span>9+</span></li> -->
                                 </ul>
-                                <a href="<?php echo esc_url(site_url()) ?>/project" class="btn ajax fl-btn color-bg"><span><?php echo esc_html('My Projects', 'shadin') ?></span></a>
+                                <a href="<?php echo esc_url(site_url()) ?>/project"
+                                    class="btn ajax fl-btn color-bg"><span><?php echo esc_html('My Projects', 'shadin') ?></span></a>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- section end  -->						
+                <!-- section end  -->
                 <section class="serv-sec">
                     <div class="section-title fl-wrap">
                         <h3><?php echo esc_html('Services That I Provide', 'shadin') ?></h3>
@@ -111,7 +118,9 @@ get_header();
                                 <span class="serv-number"><?php echo esc_html('01.', 'shadin'); ?></span>
                                 <i class="fab fa-wordpress-simple"></i>
                                 <h4><?php echo esc_html('WordPress', 'shadin'); ?></h4>
-                                <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor odio tempus arcu .</p>
+                                <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam
+                                    venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor
+                                    odio tempus arcu .</p>
                                 <ul class="serv-list">
                                     <li>Elementor</li>
                                     <li>WooCommerce</li>
@@ -124,7 +133,9 @@ get_header();
                                 <span class="serv-number">02.</span>
                                 <i class="fal fa-desktop"></i>
                                 <h4>Front End Developer</h4>
-                                <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor odio tempus arcu .</p>
+                                <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam
+                                    venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor
+                                    odio tempus arcu .</p>
                                 <ul class="serv-list">
                                     <li>JavaScript</li>
                                     <li>React</li>
@@ -137,7 +148,9 @@ get_header();
                                 <span class="serv-number">03.</span>
                                 <i class="fal fa-store"></i>
                                 <h4>Shopify</h4>
-                                <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor odio tempus arcu .</p>
+                                <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam
+                                    venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor
+                                    odio tempus arcu .</p>
                                 <ul class="serv-list">
                                     <li>Customize</li>
                                     <li>Ecommerce</li>
@@ -151,7 +164,9 @@ get_header();
                                 <span class="serv-number">04.</span>
                                 <i class="fal fa-bug"></i>
                                 <h4>Bug Fixing</h4>
-                                <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor odio tempus arcu .</p>
+                                <p>Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam
+                                    venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor
+                                    odio tempus arcu .</p>
                                 <ul class="serv-list">
                                     <li>Critical Error</li>
                                     <li>Fatal error</li>
@@ -161,7 +176,7 @@ get_header();
                         </div>
                     </div>
                 </section>
-                <!--section  --> 
+                <!--section  -->
                 <section class="scroll_sec" id="sec5">
                     <div class="section-title fl-wrap">
                         <h3><?php echo esc_html('Clents And Testimonilas', 'shadin'); ?></h3>
@@ -173,9 +188,13 @@ get_header();
                                 <div class="swiper-slide">
                                     <div class="testi-item fl-wrap">
                                         <span class="testi-number">01.</span>
-                                        <div class="testi-avatar"><img src="<?php echo get_template_directory_uri(); ?>/images/avatar/1.jpg" alt=""></div>
+                                        <div class="testi-avatar"><img
+                                                src="<?php echo get_template_directory_uri(); ?>/images/avatar/1.jpg"
+                                                alt=""></div>
                                         <h3>Liza Mirovsky</h3>
-                                        <p>"All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over "</p>
+                                        <p>"All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                                            chunks as necessary, making this the first true generator on the Internet.
+                                            It uses a dictionary of over "</p>
                                         <a href="#" class="teti-link" target="_blank">Via Twitter</a>
                                     </div>
                                 </div>
@@ -184,9 +203,13 @@ get_header();
                                 <div class="swiper-slide">
                                     <div class="testi-item fl-wrap">
                                         <span class="testi-number">02.</span>
-                                        <div class="testi-avatar"><img src="<?php echo get_template_directory_uri(); ?>/images/avatar/2.jpg" alt=""></div>
+                                        <div class="testi-avatar"><img
+                                                src="<?php echo get_template_directory_uri(); ?>/images/avatar/2.jpg"
+                                                alt=""></div>
                                         <h3>Andy Smith</h3>
-                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. "</p>
+                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc.
+                                            Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed
+                                            sapien dui. Nulla auctor sit amet sem non porta. "</p>
                                         <a href="#" class="teti-link" target="_blank">Via Facebook</a>
                                     </div>
                                 </div>
@@ -195,9 +218,13 @@ get_header();
                                 <div class="swiper-slide">
                                     <div class="testi-item fl-wrap">
                                         <span class="testi-number">03.</span>
-                                        <div class="testi-avatar"><img src="<?php echo get_template_directory_uri(); ?>/images/avatar/3.jpg" alt=""></div>
+                                        <div class="testi-avatar"><img
+                                                src="<?php echo get_template_directory_uri(); ?>/images/avatar/3.jpg"
+                                                alt=""></div>
                                         <h3>Mery Trust</h3>
-                                        <p>"All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over "</p>
+                                        <p>"All the Lorem Ipsum generators on the Internet tend to repeat predefined
+                                            chunks as necessary, making this the first true generator on the Internet.
+                                            It uses a dictionary of over "</p>
                                         <a href="#" class="teti-link" target="_blank">Via Twitter</a>
                                     </div>
                                 </div>
@@ -206,9 +233,13 @@ get_header();
                                 <div class="swiper-slide">
                                     <div class="testi-item fl-wrap">
                                         <span class="testi-number">04.</span>
-                                        <div class="testi-avatar"><img src="<?php echo get_template_directory_uri(); ?>/images/avatar/4.jpg" alt=""></div>
+                                        <div class="testi-avatar"><img
+                                                src="<?php echo get_template_directory_uri(); ?>/images/avatar/4.jpg"
+                                                alt=""></div>
                                         <h3>Centa Simpson</h3>
-                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. "</p>
+                                        <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc.
+                                            Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed
+                                            sapien dui. Nulla auctor sit amet sem non porta. "</p>
                                         <a href="#" class="teti-link" target="_blank">Via Facebook</a>
                                     </div>
                                 </div>
@@ -226,15 +257,23 @@ get_header();
                     <!-- client-list -->
                     <div class="fl-wrap client-list">
                         <ul class="">
-                            <li><a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/clients/1.png" alt=""></a></li>
-                            <li><a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/clients/2.png" alt=""></a></li>
-                            <li><a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/clients/3.png" alt=""></a></li>
-                            <li><a href="#" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/clients/4.png" alt=""></a></li>
+                            <li><a href="#" target="_blank"><img
+                                        src="<?php echo get_template_directory_uri(); ?>/images/clients/1.png"
+                                        alt=""></a></li>
+                            <li><a href="#" target="_blank"><img
+                                        src="<?php echo get_template_directory_uri(); ?>/images/clients/2.png"
+                                        alt=""></a></li>
+                            <li><a href="#" target="_blank"><img
+                                        src="<?php echo get_template_directory_uri(); ?>/images/clients/3.png"
+                                        alt=""></a></li>
+                            <li><a href="#" target="_blank"><img
+                                        src="<?php echo get_template_directory_uri(); ?>/images/clients/4.png"
+                                        alt=""></a></li>
                         </ul>
                         <!-- client-list end-->
                     </div>
                 </section>
-                <!--section end-->                							
+                <!--section end-->
                 <div class="to-top-wrap">
                     <div class="to-top color-bg"><i class="fas fa-caret-up"></i></div>
                 </div>
@@ -245,10 +284,10 @@ get_header();
         <div class="share-wrapper">
             <div class="share-container isShare"></div>
         </div>
-        <!--share end -->							
+        <!--share end -->
     </div>
     <!--wrapper end -->
-    <!--page-load -->	
+    <!--page-load -->
     <div class="page-load">
         <div class="pl-spinner"><span></span></div>
     </div>
