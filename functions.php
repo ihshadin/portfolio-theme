@@ -92,22 +92,6 @@ function shadin_setup() {
 }
 add_action( 'after_setup_theme', 'shadin_setup' );
 
-// Register widget area.
-// function shadin_widgets_init() {
-// 	register_sidebar(
-// 		array(
-// 			'name'          => esc_html__( 'Sidebar', 'shadin' ),
-// 			'id'            => 'sidebar-1',
-// 			'description'   => esc_html__( 'Add widgets here.', 'shadin' ),
-// 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-// 			'after_widget'  => '</section>',
-// 			'before_title'  => '<h2 class="widget-title">',
-// 			'after_title'   => '</h2>',
-// 		)
-// 	);
-// }
-// add_action( 'widgets_init', 'shadin_widgets_init' );
-
 // Enqueue scripts and styles.
 function shadin_scripts() {
 	// CSS styles
@@ -173,6 +157,9 @@ require get_template_directory() . '/inc/featured/featured-container.php';
 
 // Custom Posts functions
 require get_template_directory() . '/inc/custom-post.php';
+
+// Widgets register and custom widgets
+require get_template_directory() . '/inc/widgets/widgets-container.php';
 
 // Custom Taxonomies Added functions
 require get_template_directory() . '/inc/custom-texonomies.php';

@@ -51,11 +51,15 @@ if ( post_password_required() ) {
 
 			<?php
 			if (!comments_open() && get_comments_number()) : ?>
-				<p class="no-comments"><?php _e('Comments are closed.', 'textdomain'); ?></p>
+				<p class="no-comments"><?php _e('Comments are closed.', 'shadin'); ?></p>
 			<?php endif; ?>
 		</div>
 	<?php
 	endif; 
-	comment_form();
 	?>
+</div>
+<div id="addcom" class="fl-wrap">
+    <div class="comment-reply-form fl-wrap">
+        <?php comment_form(); ?>
+    </div>
 </div>

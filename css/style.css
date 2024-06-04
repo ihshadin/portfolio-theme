@@ -2469,12 +2469,12 @@ canvas {
   float: left;
   font-size: 10px;
   text-transform: uppercase;
-  padding: 12px 30px;
+  padding: 6px 15px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0 3px 3px 0;
   font-weight: 600;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 5px;
   transition: all 300ms linear;
 }
 .post-tags li a:hover,
@@ -2671,6 +2671,21 @@ canvas {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
+/* code for comment reply section */
+ul.children .comment {
+  padding: 10px 90px 30px 30px;
+}
+
+ul.children .comment-author {
+  left: auto;
+  right: 30px;
+}
+#comments .commentlist .comment-respond h3 {
+  padding: 0 30px;
+}
+#comments .commentlist .comment-respond form {
+  padding: 0 30px 30px;
+}
 .comment-num {
   position: absolute;
   right: 30px;
@@ -2718,6 +2733,9 @@ canvas {
   left: 180px;
   height: 1px;
   background: rgba(255, 255, 255, 0.1);
+}
+.comment-body a {
+  color: white;
 }
 #addcom .pr-subtitle {
   padding-left: 0;
@@ -2769,6 +2787,23 @@ canvas {
   font-size: 11px;
   text-align: left;
   color: rgba(255, 255, 255, 0.5);
+}
+.comment-reply-title {
+  text-align: left;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.comment-reply-title a {
+  color: white;
+}
+.comment-reply-title small a {
+  font-size: 12px;
+  font-weight: 300;
+  color: #f89020;
+  padding-left: 5px;
 }
 .bg-top {
   position: absolute;

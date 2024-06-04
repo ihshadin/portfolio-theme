@@ -117,55 +117,6 @@ visitor_counter(get_the_ID())
 				</div>
 				<!--post  end-->
 				<?php comments_template(); ?>
-				<div id="addcom" class="fl-wrap">
-					<div class="pr-subtitle">Leave A Comment</div>
-					<div class="comment-reply-form fl-wrap">
-						<form id="add-comment" class="add-comment custom-form">
-							<fieldset>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="input-wrap">
-											<i class="far fa-user-plus"></i>
-											<input
-												type="text"
-												name="name"
-												id="name"
-												placeholder="Your Name *"
-												value=""
-											/>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="input-wrap">
-											<i class="far fa-envelope"></i>
-											<input
-												type="text"
-												name="email"
-												id="email"
-												placeholder="Email Address*"
-												value=""
-											/>
-										</div>
-									</div>
-								</div>
-								<div class="input-wrap">
-									<i class="far fa-comment-alt"></i>
-									<textarea
-										name="comments"
-										id="comments2"
-										cols="40"
-										rows="3"
-										placeholder="YourComment:"
-									></textarea>
-								</div>
-							</fieldset>
-							<button class="btn float-btn color-bg" id="submit">
-								<span>Add Commnet</span>
-							</button>
-						</form>
-					</div>
-				</div>
-				<!--end respond-->
 			</div>
 		</div>
 	</section>
