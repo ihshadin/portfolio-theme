@@ -3,16 +3,6 @@
 // Website Live URL field for Projects Post Type
 function add_meta_fields_for_project() {
     add_meta_box( 'meta_fields_for_project', 'Additional Information for The Projects', 'live_url_callback', 'project', 'normal', 'default' );
-    // add_meta_box( 'project_gallery', 'Project Gallery', 'project_gallery_callback', 'project', 'normal', 'default' );
-    // add_meta_box( 'wp_custom_attachment', 'Custom Attachment', 'wp_custom_attachment', 'post', 'side' );
-    // add_meta_box(
-    //     'custom_image_gallery_id',
-    //     __( 'Custom Image Gallery', 'shadin' ),
-    //     'live_url_callback',
-    //     "project",
-    //     'side',
-    //     'high'
-    // );
 }
 add_action( 'add_meta_boxes', 'add_meta_fields_for_project' );
 
@@ -25,7 +15,6 @@ function live_url_callback($post) {
                 <input type='url' id="website_live_url" class="widefat" name="website_live_url" value="<?php echo esc_attr(get_post_meta( $post->ID, 'website_live_url', true)); ?>" />
             </label>
         </p>
-
         <?php
             // Retrieve current value of the photo gallery
             $photo_gallery = get_post_meta($post->ID, 'project_photo_gallery', true);
@@ -99,7 +88,6 @@ function live_url_callback($post) {
                                 $('.gallery-preview').append('<img src="' + value + '" alt="Gallery Image" />');
                             });
                         });
-
                         // Finally, open the modal.
                         file_frame.open();
                     });

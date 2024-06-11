@@ -14,4 +14,3 @@ function visitor_counter($postID) {
         update_post_meta($postID, $countKey, $count);
     }
 }
-?>

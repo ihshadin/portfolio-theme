@@ -149,8 +149,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-// Redux Framework Integrate
-require_once get_template_directory() . '/inc/redux-framework/theme-options/config.php';
+// Kirki Framework Integrate
+require_once get_template_directory() . '/inc/shadin-customizer/shadin-customizer.php';
 
 // Several features functions
 require get_template_directory() . '/inc/featured/featured-container.php';

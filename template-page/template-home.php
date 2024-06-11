@@ -4,96 +4,128 @@
 */
 get_header(); 
 ?>
-<div class="content" data-pagetitle="<?php echo esc_html('Imam Hossain Shadin', 'shadin') ?>" data-pagesubtitle="<?php echo esc_html('Home', 'shadin') ?>">
+<div class="content" data-pagetitle="<?php echo esc_html(get_theme_mod( 'homepage_title' ), 'shadin') ?>" data-pagesubtitle="<?php echo esc_html(the_title(), 'shadin') ?>">
     <div class="bg-top"></div>
     <div class="bg-bottom"></div>
     <!--section   -->
     <section class="hero-section">
         <div class="bg-wrap hero-section_bg">
-            <div class="bg" data-bg="<?php echo get_template_directory_uri(); ?>/images/bg/banner-bg-4.jpg">
-            </div>
+            <?php 
+                $background = get_theme_mod( 'shadin_banner_bg');
+                if($background['background-image']) {
+                ?>
+                    <div class="bg" data-bg="<?php echo $background['background-image']; ?>"></div>
+                <?php
+                }
+            ?>
         </div>
         <div class="hero-section-title">
             <div class="row">
                 <div class="col-md-7">
                     <div class="rotate_text hero-decor-let">
-                        <div><?php echo esc_html('Web Design', 'shadin'); ?></div>
-                        <div><?php echo esc_html('Web Development', 'shadin'); ?></div>
-                        <div><?php echo esc_html('Ecommerce websites', 'shadin'); ?></div>
-                        <div><?php echo esc_html('Project Websites', 'shadin'); ?></div>
-                        <div><?php echo esc_html('Booking Website', 'shadin'); ?></div>
-                        <div><?php echo esc_html('And More websites', 'shadin'); ?></div>
+                        <?php 
+                            $selected_skills = get_theme_mod( 'skills_list', [] );
+                            $choices_skills = skills_list();
+                            // var_dump($choices_skills);
+                            if( ! empty($selected_skills) ) {
+                                foreach($selected_skills as $skill) {
+                                    if(isset($choices_skills[$skill])) {
+                                    ?>
+                                        <div><?php echo esc_html($choices_skills[$skill], 'shadin'); ?></div>
+                                    <?php
+                                    }
+                                }
+                            }
+                        ?>
                     </div>
-                    <h2><?php echo esc_html("Welcome to Shadin's Project Website", 'shadin'); ?></h2>
-
-                    <div class="video_btn-wrap fl-wrap">
-                        <a data-src="<?php echo esc_url('https://vimeo.com/176916362') ?>" class="image-popup gradient-bg">
-                            <i class="fas fa-play"></i>
-                        </a>
-                        <span><?php echo esc_html('Play  Video Presentation', 'shadin'); ?></span>
-                    </div>
+                    <?php 
+                        if( ! empty(get_theme_mod( 'banner_title')) ) {
+                        ?>
+                            <h2><?php echo esc_html(get_theme_mod( 'banner_title', "WELCOME TO SHADIN'S PROJECT WEBSITE"), 'shadin'); ?></h2>
+                        <?php
+                        }
+                    ?>
+                    <?php 
+                        if( true == get_theme_mod( 'is_presentation_display') ) {
+                        ?>
+                            <div class="video_btn-wrap fl-wrap">
+                                <a data-src="<?php echo esc_url(get_theme_mod('presentation_url', 'https://vimeo.com/176916362')) ?>" class="image-popup gradient-bg">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                                <?php if( !empty(get_theme_mod('presentation_title'))) { ?>
+                                    <span><?php echo esc_html(get_theme_mod('presentation_title'), 'shadin'); ?></span>
+                                <?php } ?>
+                            </div>
+                        <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>
     </section>
     <!-- section end  -->
     <!--section   -->
-    <section>
+    <section class="about-section">
         <div class="row">
             <div class="col-md-7">
-                <p>
-                    <?php echo esc_html('I’m Imam Hossain Shadin. I’m a Web developer who is passionate about making error-free websites with 100% client satisfaction. Let’s collaborate to build a strong online presence you’re excited to share with the world.', 'shadin') ?>
-                </p>
+                <?php if( ! empty(get_theme_mod("short_bio")) ) { ?> 
+                    <p class="short-bio">
+                        <?php echo esc_html(get_theme_mod("short_bio"), 'shadin') ?>
+                    </p>
+                <?php } ?>
                 <div class="facts-container fl-wrap">
                     <!-- inline-facts -->
-                    <div class="inline-facts-wrap">
-                        <div class="inline-facts">
-                            <div class="milestone-counter">
-                                <div class="stats animaper">
-                                    <div class="num" data-content="0" data-num="4">0</div>
+                    <?php
+                        $achievements = get_theme_mod("achievements_fields", []);
+
+                        if( ! empty($achievements) ) {
+                            foreach($achievements as $achievement) {
+                                ?>
+                                <div class="inline-facts-wrap">
+                                    <div class="inline-facts">
+                                        <div class="milestone-counter">
+                                            <div class="stats animaper">
+                                                <div class="num" data-content="0" data-num="<?php echo esc_attr($achievement['achievement_num'], 'shadin') ?>">0</div>
+                                            </div>
+                                        </div>
+                                        <h6><?php echo esc_html($achievement['achievement_name'], 'shadin') ?></h6>
+                                    </div>
                                 </div>
-                            </div>
-                            <h6><?php echo esc_html('Years Experience', 'shadin') ?></h6>
-                        </div>
-                    </div>
-                    <!-- inline-facts end -->
-                    <!-- inline-facts  -->
-                    <div class="inline-facts-wrap">
-                        <div class="inline-facts">
-                            <div class="milestone-counter">
-                                <div class="stats animaper">
-                                    <div class="num" data-content="0" data-num="50">0</div>
-                                </div>
-                            </div>
-                            <h6><?php echo esc_html('Happy Clients', 'shadin') ?></h6>
-                        </div>
-                    </div>
-                    <!-- inline-facts end -->
-                    <!-- inline-facts  -->
-                    <div class="inline-facts-wrap">
-                        <div class="inline-facts">
-                            <div class="milestone-counter">
-                                <div class="stats animaper">
-                                    <div class="num" data-content="0" data-num="150">0</div>
-                                </div>
-                            </div>
-                            <h6><?php echo esc_html('Projects Completed', 'shadin') ?></h6>
-                        </div>
-                    </div>
+                                <?php
+                            }
+                        }
+                    ?>
                     <!-- inline-facts end -->
                 </div>
             </div>
             <div class="col-md-5">
                 <div class="hero-info-list fl-wrap">
                     <ul>
-                        <li><strong>Available For Work</strong><span>Yes</span></li>
-                        <li><strong>Email</strong><span>shadinfr@yahoo.com</span></li>
-                        <li><strong>WhatsApp</strong><span>+8801858733453</span></li>
-                        <li><strong>By LinkedIn</strong><span>Imam Hossain</span></li>
+                        <?php
+                            $contact_infos = get_theme_mod("contact_info_box");
+                            if( ! empty($contact_infos) ) {
+                                foreach($contact_infos as $contact_info) {
+                                    ?>
+                                    <li>
+                                        <strong><?php echo esc_html($contact_info["contact_label"], 'shadin') ?></strong>
+                                        <?php 
+                                            if ($contact_info["is_have_link"]) {
+                                                echo '<span><a href="' . esc_url($contact_info["contact_link"]) . '">' . esc_html($contact_info["contact_value"]) . '</a></span>';
+                                            } else {
+                                                echo '<span>' . esc_html($contact_info["contact_value"]) . '</span>';
+                                            }
+                                        ?>
+                                    </li>
+                                    <?php
+                                }
+                            }
+                        ?>
                     </ul>
-                    <a href="<?php echo esc_url(site_url()) ?>/project" class="btn ajax fl-btn color-bg">
-                        <span><?php echo esc_html('My Projects', 'shadin') ?></span>
-                    </a>
+                    <?php if(get_theme_mod("is_contact_btn_show")) : ?>
+                        <a href="<?php echo esc_url(get_theme_mod("contact_btn_url")) ?>" class="btn ajax fl-btn color-bg">
+                            <span><?php echo esc_html(get_theme_mod("contact_btn_text"), 'shadin') ?></span>
+                        </a>
+                    <?php endif ?>
                 </div>
             </div>
         </div>
@@ -104,23 +136,29 @@ get_header();
             <h3><?php echo esc_html('Services That I Provide', 'shadin') ?></h3>
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <div class="column-wrapper_text services-item fl-wrap">
-                    <span class="serv-number"><?php echo esc_html('01.', 'shadin'); ?></span>
-                    <i class="fab fa-wordpress-simple"></i>
-                    <h4><?php echo esc_html('WordPress', 'shadin'); ?></h4>
-                    <p>
-                        Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam
-                        venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor
-                        odio tempus arcu .
-                    </p>
-                    <ul class="serv-list">
-                        <li>Elementor</li>
-                        <li>WooCommerce</li>
-                        <li>Hotel Booking</li>
-                    </ul>
-                </div>
-            </div>
+            <?php
+                $services = get_theme_mod("service_items");
+                // var_dump($services);
+                if( ! empty($services) ) {
+                    foreach($services as $service) {
+                        ?>
+                        <div class="col-md-6">
+                            <div class="column-wrapper_text services-item fl-wrap">
+                                <span class="serv-number"><?php echo esc_html('01.', 'shadin'); ?></span>
+                                <i class="fab fa-wordpress-simple"></i>
+                                <h4><?php echo esc_html($service["service_name"], 'shadin'); ?></h4>
+                                <p><?php echo esc_html($service["service_desc"], 'shadin'); ?></p>
+                                <ul class="serv-list">
+                                    <?php foreach($service['service_skills'] as $skill): ?>
+                                        <li><?php echo esc_html($skill, 'shadin'); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
+            ?>
             <div class="col-md-6">
                 <div class="column-wrapper_text services-item fl-wrap">
                     <span class="serv-number">02.</span>
