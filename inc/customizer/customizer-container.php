@@ -19,12 +19,20 @@ new \Kirki\Panel(
 		'priority'    => 10,
 	]
 );
-// Add a Panel "Headers Parts"
+// Add a Panel "Home Page"
 new \Kirki\Panel(
 	'shadin_homepage',
 	[
 		'title'       => esc_html__( 'Home Page', 'shadin' ),
 		'priority'    => 20,
+	]
+);
+// Add a Panel "Resume"
+new \Kirki\Panel(
+	'shadin_resume',
+	[
+		'title'       => esc_html__( 'Resume', 'shadin' ),
+		'priority'    => 30,
 	]
 );
 
@@ -43,6 +51,7 @@ new \Kirki\Section(
 		'priority'    => 10,
 	]
 );
+
 // Add a section "Banner Section"
 new \Kirki\Section(
 	'shadin_banner_section',
@@ -53,7 +62,7 @@ new \Kirki\Section(
 		'priority'    => 10,
 	]
 );
-// Add a section "About Sidebar"
+// Add a section "About Section"
 new \Kirki\Section(
 	'shadin_about_section',
 	[
@@ -63,7 +72,7 @@ new \Kirki\Section(
 		'priority'    => 20,
 	]
 );
-// Add a section "Services Sidebar"
+// Add a section "Services Section"
 new \Kirki\Section(
 	'shadin_services_section',
 	[
@@ -73,14 +82,53 @@ new \Kirki\Section(
 		'priority'    => 30,
 	]
 );
+// Add a section "Testimonials Section"
+new \Kirki\Section(
+	'shadin_testimonials_section',
+	[
+		'title'       => esc_html__( 'Testimonials Section', 'shadin' ),
+		'description' => esc_html__( "You can add/edit Testimonials from here.", 'shadin' ),
+        'panel'       => 'shadin_homepage',
+		'priority'    => 40,
+	]
+);
+
+// Add a section "Resume Summary"
+new \Kirki\Section(
+	'shadin_resume_section',
+	[
+		'title'       => esc_html__( 'Resume Summary', 'shadin' ),
+		'description' => esc_html__( "You can add/edit Resume Summary Info from here.", 'shadin' ),
+        'panel'       => 'shadin_resume',
+		'priority'    => 10,
+	]
+);
+// Add a section "Work History"
+new \Kirki\Section(
+	'shadin_work_history',
+	[
+		'title'       => esc_html__( 'Work History', 'shadin' ),
+		'description' => esc_html__( "You can add/edit Work History from here.", 'shadin' ),
+        'panel'       => 'shadin_resume',
+		'priority'    => 20,
+	]
+);
+// Add a section "Education Qualification"
+new \Kirki\Section(
+	'shadin_edu_qua',
+	[
+		'title'       => esc_html__( 'Education Qualification', 'shadin' ),
+		'description' => esc_html__( "You can add/edit Education Qualification from here.", 'shadin' ),
+        'panel'       => 'shadin_resume',
+		'priority'    => 20,
+	]
+);
 
 /*-------------------
 Follow below for
 All Fields 
 ---------------------*/
 
-// Header
-require_once get_template_directory() . '/inc/shadin-customizer/header-customizer.php';
-// Home page
-require_once get_template_directory() . '/inc/shadin-customizer/home-customizer.php';
+// Fields Customizer
+require_once get_template_directory() . '/inc/customizer/fields-customizer.php';
 

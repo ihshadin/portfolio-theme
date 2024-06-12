@@ -150,7 +150,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 // Kirki Framework Integrate
-require_once get_template_directory() . '/inc/shadin-customizer/shadin-customizer.php';
+require_once get_template_directory() . '/inc/customizer/customizer-container.php';
 
 // Several features functions
 require get_template_directory() . '/inc/featured/featured-container.php';

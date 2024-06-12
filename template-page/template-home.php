@@ -131,113 +131,83 @@ get_header();
         </div>
     </section>
     <!-- section end  -->
+    <?php if(get_theme_mod('is_service_section_show', true)): ?>
     <section class="serv-sec">
-        <div class="section-title fl-wrap">
-            <h3><?php echo esc_html('Services That I Provide', 'shadin') ?></h3>
-        </div>
+        <?php if(!empty(get_theme_mod('service_section_title'))): ?>
+            <div class="section-title fl-wrap">
+                <h3><?php echo esc_html(get_theme_mod('service_section_title'), 'shadin') ?></h3>
+            </div>
+        <?php endif; ?>
         <div class="row">
-            <?php
-                $services = get_theme_mod("service_items");
-                // var_dump($services);
-                if( ! empty($services) ) {
-                    foreach($services as $service) {
-                        ?>
-                        <div class="col-md-6">
-                            <div class="column-wrapper_text services-item fl-wrap">
-                                <span class="serv-number"><?php echo esc_html('01.', 'shadin'); ?></span>
-                                <i class="fab fa-wordpress-simple"></i>
-                                <h4><?php echo esc_html($service["service_name"], 'shadin'); ?></h4>
-                                <p><?php echo esc_html($service["service_desc"], 'shadin'); ?></p>
-                                <ul class="serv-list">
-                                    <?php foreach($service['service_skills'] as $skill): ?>
-                                        <li><?php echo esc_html($skill, 'shadin'); ?></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
+            <?php $services = get_theme_mod("service_items"); ?>
+            <?php if( ! empty($services) ): ?>
+                <?php foreach($services as $index => $service): ?>
+                    <div class="col-md-6">
+                        <div class="column-wrapper_text services-item fl-wrap">
+                            <span class="serv-number"><?php echo esc_html(sprintf('%02d.', $index + 1), 'shadin'); ?></span>
+                            <img src="<?php echo esc_url($service["service_image"], 'shadin'); ?>" alt="<?php echo esc_html($service["service_name"], 'shadin'); ?>">
+                            <h4><?php echo esc_html($service["service_name"], 'shadin'); ?></h4>
+                            <p><?php echo esc_html($service["service_desc"], 'shadin'); ?></p>
+                            <ul class="serv-list">
+                                <?php 
+                                    if(!empty($service['service_skills'])):
+                                        $skills = explode(',', $service['service_skills']);
+                                        // var_dump($skills);
+                                        foreach($skills as $skill): 
+                                        ?>
+                                            <li><?php echo esc_html($skill, 'shadin'); ?></li>
+                                        <?php 
+                                        endforeach;
+                                    endif; 
+                                ?>
+                            </ul>
                         </div>
-                        <?php
-                    }
-                }
-            ?>
-            <div class="col-md-6">
-                <div class="column-wrapper_text services-item fl-wrap">
-                    <span class="serv-number">02.</span>
-                    <i class="fal fa-desktop"></i>
-                    <h4>Front End Developer</h4>
-                    <p>
-                        Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam
-                        venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor
-                        odio tempus arcu .
-                    </p>
-                    <ul class="serv-list">
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>MongoDB</li>
-                    </ul>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="col-md-12">
+                    <p>No services found.</p>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="column-wrapper_text services-item fl-wrap">
-                    <span class="serv-number">03.</span>
-                    <i class="fal fa-store"></i>
-                    <h4>Shopify</h4>
-                    <p>
-                        Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam
-                        venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor
-                        odio tempus arcu .
-                    </p>
-                    <ul class="serv-list">
-                        <li>Customize</li>
-                        <li>Ecommerce</li>
-                        <li>Optimize</li>
-                        <li>SEO</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="column-wrapper_text services-item fl-wrap">
-                    <span class="serv-number">04.</span>
-                    <i class="fal fa-bug"></i>
-                    <h4>Bug Fixing</h4>
-                    <p>
-                        Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam
-                        venenatis ut dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor
-                        odio tempus arcu .
-                    </p>
-                    <ul class="serv-list">
-                        <li>Critical Error</li>
-                        <li>Fatal error</li>
-                        <li>syntax error</li>
-                    </ul>
-                </div>
-            </div>
+            <?php endif; ?>
         </div>
     </section>
+    <?php endif; ?>
     <!--section  -->
-    <section class="scroll_sec" id="sec5">
-        <div class="section-title fl-wrap">
-            <h3><?php echo esc_html('Clents And Testimonilas', 'shadin'); ?></h3>
-        </div>
+    <?php if(get_theme_mod('is_testimonials_section_show', true)): ?>
+    <section class="testimonial-section scroll_sec" id="sec5">
+        <?php if(!empty(get_theme_mod('testimonials_section_title'))): ?>
+            <div class="section-title fl-wrap">
+                <h3><?php echo esc_html(get_theme_mod('testimonials_section_title'), 'shadin') ?></h3>
+            </div>
+        <?php endif; ?>
         <div class="testilider fl-wrap">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <!-- swiper-slide -->
-                    <div class="swiper-slide">
-                        <div class="testi-item fl-wrap">
-                            <span class="testi-number">01.</span>
-                            <div class="testi-avatar"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/images/avatar/1.jpg"
-                                    alt=""></div>
-                            <h3>Liza Mirovsky</h3>
-                            <p>"All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                chunks as necessary, making this the first true generator on the Internet.
-                                It uses a dictionary of over "</p>
-                            <a href="#" class="teti-link" target="_blank">Via Twitter</a>
+                    <?php $testimonials = get_theme_mod("testimonials_items", []); ?>
+                    <?php if( ! empty($testimonials) ): ?>
+                        <?php foreach($testimonials as $index => $testimonial): ?>
+                            <div class="swiper-slide">
+                                <div class="testi-item fl-wrap">
+                                    <span class="testi-number"><?php echo esc_html(sprintf('%02d.', $index + 1), 'shadin'); ?></span>
+                                    <div class="testi-avatar">
+                                        <img src="<?php echo esc_url($testimonial["testi_client_image"], 'shadin'); ?>" alt="<?php echo esc_html($testimonial["testi_client_name"], 'shadin'); ?>">
+                                    </div>
+                                    <h3><?php echo esc_html($testimonial["testi_client_name"], 'shadin'); ?></h3>
+                                    <p><?php echo esc_html($testimonial["testimonial_text"], 'shadin'); ?></p>
+                                    <!-- <a href="#" class="testi-link" target="_blank"><?php// echo esc_html("Via " . $testimonial["testimonial_by"], 'shadin'); ?></a> -->
+                                    <span class="testi-link"><?php echo esc_html("Via " . $testimonial["testimonial_by"], 'shadin'); ?></span>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <div class="swiper-slide">
+                            <p>No Testimonials found.</p>
                         </div>
-                    </div>
+                    <?php endif; ?>
                     <!-- swiper-slide end-->
                     <!-- swiper-slide -->
-                    <div class="swiper-slide">
+                    <!-- <div class="swiper-slide">
                         <div class="testi-item fl-wrap">
                             <span class="testi-number">02.</span>
                             <div class="testi-avatar"><img
@@ -247,12 +217,12 @@ get_header();
                             <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc.
                                 Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed
                                 sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                            <a href="#" class="teti-link" target="_blank">Via Facebook</a>
+                            <a href="#" class="testi-link" target="_blank">Via Facebook</a>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- swiper-slide end-->
                     <!-- swiper-slide -->
-                    <div class="swiper-slide">
+                    <!-- <div class="swiper-slide">
                         <div class="testi-item fl-wrap">
                             <span class="testi-number">03.</span>
                             <div class="testi-avatar"><img
@@ -262,12 +232,12 @@ get_header();
                             <p>"All the Lorem Ipsum generators on the Internet tend to repeat predefined
                                 chunks as necessary, making this the first true generator on the Internet.
                                 It uses a dictionary of over "</p>
-                            <a href="#" class="teti-link" target="_blank">Via Twitter</a>
+                            <a href="#" class="testi-link" target="_blank">Via Twitter</a>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- swiper-slide end-->
                     <!-- swiper-slide -->
-                    <div class="swiper-slide">
+                    <!-- <div class="swiper-slide">
                         <div class="testi-item fl-wrap">
                             <span class="testi-number">04.</span>
                             <div class="testi-avatar"><img
@@ -277,9 +247,9 @@ get_header();
                             <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc.
                                 Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed
                                 sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                            <a href="#" class="teti-link" target="_blank">Via Facebook</a>
+                            <a href="#" class="testi-link" target="_blank">Via Facebook</a>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- swiper-slide end-->
                 </div>
             </div>
@@ -292,24 +262,25 @@ get_header();
             <div class="tc-pagination slider-pag"></div>
         </div>
         <!-- client-list -->
-        <div class="fl-wrap client-list">
+        <!-- <div class="fl-wrap client-list">
             <ul class="">
-                <li><a href="#" target="_blank"><img
-                            src="<?php echo get_template_directory_uri(); ?>/images/clients/1.png"
-                            alt=""></a></li>
-                <li><a href="#" target="_blank"><img
-                            src="<?php echo get_template_directory_uri(); ?>/images/clients/2.png"
-                            alt=""></a></li>
-                <li><a href="#" target="_blank"><img
-                            src="<?php echo get_template_directory_uri(); ?>/images/clients/3.png"
-                            alt=""></a></li>
-                <li><a href="#" target="_blank"><img
-                            src="<?php echo get_template_directory_uri(); ?>/images/clients/4.png"
-                            alt=""></a></li>
+                <li>
+                    <a href="#" target="_blank"><img src="<?php// echo get_template_directory_uri(); ?>/images/clients/1.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" target="_blank"><img src="<?php// echo get_template_directory_uri(); ?>/images/clients/2.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" target="_blank"><img src="<?php// echo get_template_directory_uri(); ?>/images/clients/3.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="#" target="_blank"><img src="<?php// echo get_template_directory_uri(); ?>/images/clients/4.png" alt=""></a>
+                </li>
             </ul>
-            <!-- client-list end-->
-        </div>
+        </div> -->
+        <!-- client-list end-->
     </section>
+    <?php endif; ?>
     <!--section end-->
 <?php 
 get_footer();
