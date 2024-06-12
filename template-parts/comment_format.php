@@ -58,7 +58,7 @@ function my_custom_comment_form($args) {
     // $args['title_reply'] = '<div class="pr-subtitle">Leave A Comment</div>';
     $args['title_reply_to'] = '<div class="pr-subtitle">Leave a reply to %s</div>';
     $args['logged_in_as'] = '';
-    $args['cancel_reply_link'] = __('Cancel Reply');
+    $args['cancel_reply_link'] = __('Cancel Reply', 'shadin');
 
     // $args['comment_notes_before'] = '';
     // $args['comment_notes_after'] = '';

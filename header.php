@@ -31,7 +31,6 @@
                 <!--header -->
                 <header class="main-header">
                     <div class="header-titile">
-                        <!-- <h1><?php // echo esc_html('Imam Hossain Shadin', 'shadin'); ?></h1> -->
                         <h1><?php echo esc_html( get_theme_mod( 'your_name' ), 'shadin' ); ?></h1>
                         <h4><?php echo esc_html(get_theme_mod( 'your_designation' ), 'shadin'); ?></h4>
                     </div>
@@ -44,24 +43,6 @@
                     <div class="main-menu-wrap">
                         <!-- nav -->
                         <nav class="nav-inner fl-wrap" id="menu">
-                            <!-- <ul>
-                                <li><a href="" class="ajax"><i class="fal fa-home"></i> Home</a></li>
-                                <li><a href="" class="ajax"><i class="fal fa-address-card"></i> Resume</a></li>
-                                <li><a href="" class="ajax"><i class="fal fa-images"></i> Project</a></li>
-                                <li><a href="" class="ajax"><i class="fal fa-envelope"></i> Contacts</a></li>
-                                <li><a href="" class="ajax"><i class="fal fa-book"></i> Blog</a></li>
-                                <li>
-                                    <a href="#"><i class="fal fa-layer-group"></i> Pages</a>
-                                    
-                                    <ul>
-                                        <li><a href="project-single.html" class="ajax">Project Single</a></li>
-                                        <li><a href="project-single2.html" class="ajax">Project Single 2</a></li>
-                                        <li><a href="blog-single.html" class="ajax">Blog Single</a></li>
-                                        <li><a href="404.html" class="ajax">404</a></li>
-                                    </ul>
-                                    
-                                </li>
-                            </ul> -->
 							<?php 
 								$menu_args = array(
 									'menu'         => 'primary-menu',
@@ -76,14 +57,6 @@
                         if(get_theme_mod( 'header_btn_text')) {
                         ?>
                             <a href="<?php echo esc_url(get_theme_mod( 'header_btn_options') === "upload_file" ? get_theme_mod( 'header_btn_file') : get_theme_mod( 'header_btn_url'), 'shadin') ?>" download="Imam Hossain" class="header_btn gradient-bg">
-                                <?php
-                                    // if(get_theme_mod('header_btn_icon')) {
-                                        // var_dump(get_theme_mod('header_btn_icon'))
-                                    ?>
-                                        <!-- <i class="dashicons <?php //echo esc_attr(get_theme_mod('header_btn_icon'), 'shadin') ?>"></i> -->
-                                    <?php
-                                    // }
-                                ?>
                                 <i class="fas fa-download"></i>
                                 <?php echo esc_html( get_theme_mod( 'header_btn_text'), 'shadin' ); ?>
                             </a>

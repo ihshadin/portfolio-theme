@@ -16,7 +16,7 @@ new \Kirki\Field\Text(
 		'label'    => esc_html__( 'Your Name', 'shadin' ),
 		'section'  => 'shadin_header_sidebar',
 		'default'  => esc_html__( 'Imam Hossain', 'shadin' ),
-        'description' => esc_html__( "This name will be SEO friendly", 'shadin' ),
+        'description' => esc_html__( 'This name will be SEO friendly', 'shadin' ),
 		'priority' => 10,
         'transport'   => 'postMessage',
         'partial_refresh' => [
@@ -797,6 +797,13 @@ new \Kirki\Field\Textarea(
                 },
             ],
         ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_resume_summary_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
 	]
 );
 new \Kirki\Field\Text(
@@ -1305,67 +1312,6 @@ new \Kirki\Field\Text(
         ],
 	]
 );
-// new \Kirki\Field\Repeater (
-//     [
-// 		'settings'      => 'contact_infos',
-// 		'label'         => esc_html__( 'Contact Infos', 'shadin' ),
-//         'button_label'  => esc_html__( 'Add New info', 'shadin' ),
-// 		'section'       => 'shadin_contact_section',
-// 		'priority'      => 70,
-//         'transport'     => 'postMessage',
-//         'choices' => [
-//             'limit' => 4
-//         ],
-//         'row_label'     => [
-//             'type'          => 'field',
-//             'value'         => esc_html__('Skill', 'shadin' ),
-//             'field'         => 'skill_name',
-//         ],
-// 		'default'       => [
-//             [
-//                 'skill_name'         => esc_html__( 'WordPress', 'shadin' ),
-//                 'skill_value'         => esc_html__( 90, 'shadin' ),
-//             ],
-//             [
-//                 'skill_name'         => esc_html__( 'Elementor', 'shadin' ),
-//                 'skill_value'         => esc_html__( 95, 'shadin' ),
-//             ],
-//             [
-//                 'skill_name'         => esc_html__( 'Divi', 'shadin' ),
-//                 'skill_value'         => esc_html__( 80, 'shadin' ),
-//             ]
-// 		],
-// 		'fields'        => [
-// 			'con_info_title' 	=> [
-// 				'type'          => 'text',
-// 				'label'         => esc_html__( 'Title', 'shadin' ),
-// 				'default'       => 'My Emails',
-// 			],
-// 			'con_info_desc' 	=> [
-// 				'type'          => 'text',
-// 				'label'         => esc_html__( 'Description', 'shadin' ),
-// 				'default'       => 90,
-// 			],
-// 			'con_info_value' 	=> [
-// 				'type'          => 'text',
-// 				'label'         => esc_html__( 'Value', 'shadin' ),
-// 				'default'       => 90,
-// 			],
-// 		],
-//         'active_callback' => [
-//             [
-//                 'setting'  => 'is_skills_show',
-//                 'operator' => '==',
-//                 'value'    => true,
-//             ],
-//             [
-//                 'setting'  => 'is_featured_skills_show',
-//                 'operator' => '==',
-//                 'value'    => true,
-//             ],
-//         ],
-// 	],
-// );
 new \Kirki\Field\Checkbox(
 	[
 		'settings'    => 'is_email_info_show',
@@ -1670,4 +1616,13 @@ new \Kirki\Field\Textarea(
             ],
         ],
 	]
+);
+new \Kirki\Field\Color(
+    [
+        'settings'    => 'theme_primary_color',
+        'label'       => esc_html__('Primary Color', 'shadin'),
+        'section'     => 'shadin_color_section',
+        'default'     => '#f89020',
+        'transport'   => 'postMessage',
+    ]
 );

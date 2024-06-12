@@ -90,8 +90,8 @@ get_header();
 								'format' => '?paged=%#%',
 								'current' => $current_page,
 								'total' => $total_pages,
-								'prev_text' => __('<i class="fas fa-caret-left"></i>'),
-								'next_text' => __('<i class="fas fa-caret-right"></i>'),
+								'prev_text' => __('<i class="fas fa-caret-left"></i>', 'shadin'),
+								'next_text' => __('<i class="fas fa-caret-right"></i>', 'shadin'),
 								'before_page_number' => '',
 								'after_page_number' => '.',
 								'type' => 'array',
@@ -113,89 +113,6 @@ get_header();
 						echo 'No Projects found';
 					}
 				?>
-				<!-- <div class="post fl-wrap">
-					<div class="section-title fl-wrap">
-						<h3>Blog Post Title</h3>
-						<span class="post-date"
-						><i class="far fa-calendar"></i>15 march 2022
-						</span>
-					</div>
-					<div class="post-media fl-wrap">
-						<div class="single-slider-wrap fl-wrap">
-						<div class="single-slider fl-wrap">
-							<div class="swiper-container">
-							<div class="swiper-wrapper lightgallery">
-								<div class="swiper-slide hov_zoom">
-								<img src="<?php echo get_template_directory_uri();?>/images/folio/9.jpg" alt="" /><a
-									href="<?php echo get_template_directory_uri();?>/images/folio/9.jpg"
-									class="box-media-zoom popup-image"
-									><i class="fas fa-search"></i
-								></a>
-								</div>
-								<div class="swiper-slide hov_zoom">
-								<img src="<?php echo get_template_directory_uri();?>/images/folio/10.jpg" alt="" /><a
-									href="<?php echo get_template_directory_uri();?>/images/folio/10.jpg"
-									class="box-media-zoom popup-image"
-									><i class="fas fa-search"></i
-								></a>
-								</div>
-								<div class="swiper-slide hov_zoom">
-								<img src="<?php echo get_template_directory_uri();?>/images/folio/11.jpg" alt="" /><a
-									href="<?php echo get_template_directory_uri();?>/images/folio/11.jpg"
-									class="box-media-zoom popup-image"
-									><i class="fas fa-search"></i
-								></a>
-								</div>
-							</div>
-							</div>
-							<div class="ss-button ss-button-prev">
-							<i class="fal fa-angle-left"></i>
-							</div>
-							<div class="ss-button ss-button-next">
-							<i class="fal fa-angle-right"></i>
-							</div>
-							<div class="css-pagination-wrap">
-							<div class="tc-pagination slider-pag"></div>
-							</div>
-						</div>
-						</div>
-					</div>
-					<div class="post-opt single_post-opt">
-						<ul class="no-list-style">
-						<li>
-							<i class="fal fa-eye"></i> <span>164 views</span>
-						</li>
-						<li>
-							<i class="far fa-comments-alt"></i>
-							<span>3 commnets</span>
-						</li>
-						</ul>
-					</div>
-					<div class="box-text-wrap fl-wrap">
-						<p>
-						Sed do eiusmod tempor incididunt ut labore et dolore
-						magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat. Dolore magna aliqua.
-						</p>
-						<a href="blog-single.html" class="btn ajax color-bg"
-						><span>Read More</span></a
-						>
-					</div>
-				</div> -->
-				<!--post  end-->
-
-				<!--pagination-->
-				<!-- <div class="pagination">
-					<a href="#" class="prevposts-link"><i class="fas fa-caret-left"></i></a>
-					<a href="#">01.</a>
-					<a href="#" class="current-page">02.</a>
-					<a href="#">03.</a>
-					<a href="#">04.</a>
-					<a href="#" class="nextposts-link"><i class="fas fa-caret-right"></i></a>
-				</div> -->
-				<!--pagination end-->
-				
 			</div>
 			<!-- sidebar -->
 			<div class="col-md-4">

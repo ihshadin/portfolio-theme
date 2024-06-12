@@ -5,6 +5,7 @@
   Theme: Shadin Portflio  Template
   Version: 1.0
 	++ Fonts ++
+	++ Color Variable ++
 	++ General Style ++
 	++ Page preload ++
 	++ Typography ++
@@ -19,6 +20,16 @@
 	++ Responsive ++
 /*-------------Fonts---------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&amp;display=swap");
+
+/*-------------General Style---------------------------------------*/
+:root {
+  --primary-color: #f89020;
+  --secondary-color: #fff;
+  --gradient-primary-color: #f82085;
+  --gradient-secondary-color: #f82085;
+  --primary-bg-color: #2e3a42;
+}
+
 /*-------------General Style---------------------------------------*/
 html {
   overflow-x: hidden !important;
@@ -31,7 +42,7 @@ body {
   font-size: 13px;
   height: 100%;
   text-align: center;
-  /* color: #fff; */
+  /* color: var(--secondary-color); */
   font-family: "Poppins", sans-serif;
 }
 @-o-viewport {
@@ -57,7 +68,7 @@ nav.nav-inner,
 .comment-body,
 .top-opt:after,
 .main-footer:after {
-  background: #2e3a42;
+  background: var(--primary-bg-color);
 }
 .main-header,
 .main-header:before,
@@ -507,7 +518,7 @@ p {
   height: 40px;
 }
 .header-titile h1 {
-  color: #fff;
+  color: var(--secondary-color);
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 800;
@@ -537,7 +548,7 @@ p {
 .services-item:hover i {
   transition: all 0.1s ease-in-out;
   animation: bounce 1s;
-  color: #fff;
+  color: var(--secondary-color);
 }
 .header_btn:hover {
   box-shadow: 0px 0px 0px 0px rgb(255 255 255 / 10%);
@@ -597,7 +608,7 @@ nav.nav-inner {
   z-index: 2;
 }
 .sliding-menu a:hover {
-  color: #fff;
+  color: var(--secondary-color);
 }
 .sliding-menu li:after {
   content: "";
@@ -621,7 +632,7 @@ nav.nav-inner {
 .sliding-menu a.back:before {
   font-family: "Font Awesome\ 5 Pro";
   content: "\f104";
-  color: #fff;
+  color: var(--secondary-color);
 }
 .submen-dec:before {
   font-family: "Font Awesome\ 5 Pro";
@@ -792,7 +803,7 @@ nav.nav-inner {
   display: none;
 }
 .mob-logo span {
-  color: #fff;
+  color: var(--secondary-color);
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;
@@ -806,7 +817,7 @@ nav.nav-inner {
 .to_contacts {
   float: right;
   margin-right: 180px;
-  color: #fff;
+  color: var(--secondary-color);
   font-size: 10px;
   text-transform: uppercase;
   top: 28px;
@@ -873,7 +884,7 @@ nav.nav-inner {
   border: none;
 }
 .footer-social li a:hover {
-  color: #fff;
+  color: var(--secondary-color);
 }
 .copyright {
   position: absolute;
@@ -921,7 +932,7 @@ nav.nav-inner {
   opacity: 1;
 }
 .share-icon:hover {
-  color: #fff;
+  color: var(--secondary-color);
 }
 .share-icon:before {
   font-family: "Font Awesome\ 5 Brands";
@@ -983,7 +994,7 @@ section {
 }
 .section-title h3 {
   text-align: left;
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: 800;
   text-transform: uppercase;
   font-size: 18px;
@@ -992,7 +1003,7 @@ section {
   float: left;
   max-width: 500px;
   text-align: left;
-  color: #fff;
+  color: var(--secondary-color);
   margin-top: 10px;
   position: relative;
   font-size: 12px;
@@ -1007,7 +1018,7 @@ section {
   font-weight: 800;
   font-size: 30px;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--secondary-color);
   position: relative;
 }
 .hero-section-title h2:before {
@@ -1036,7 +1047,7 @@ section {
   float: left;
   position: relative;
   margin: 12px 0 0 20px;
-  color: #fff;
+  color: var(--secondary-color);
   font-size: 10px;
   text-transform: uppercase;
   font-weight: 600;
@@ -1052,7 +1063,7 @@ section {
 }
 .rotate_text {
   text-align: left;
-  color: #fff;
+  color: var(--secondary-color);
 }
 .hero-info-list {
   padding: 45px 30px;
@@ -1069,7 +1080,7 @@ section {
   text-align: left;
   float: left;
   width: 100%;
-  color: #fff;
+  color: var(--secondary-color);
   margin-bottom: 12px;
   border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
   padding-bottom: 10px;
@@ -1081,7 +1092,7 @@ section {
   float: right;
 }
 .hero-info-list li a {
-  color: #fff;
+  color: var(--secondary-color);
 }
 .hero-section {
   padding: 120px 0 60px;
@@ -1135,7 +1146,7 @@ section {
   font-weight: 800;
 }
 .inline-facts-wrap h6 {
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: 400;
   font-size: 10px;
   text-transform: uppercase;
@@ -1154,7 +1165,7 @@ section {
 .services-item h4 {
   font-size: 14px;
   text-align: left;
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: 600;
   margin-bottom: 30px;
 }
@@ -1163,7 +1174,7 @@ section {
   right: 30px;
   top: 30px;
   width: 60px;
-  color: #fff;
+  color: var(--secondary-color);
 }
 .serv-list {
   float: left;
@@ -1185,7 +1196,7 @@ section {
   float: left;
   text-align: left;
   padding: 0 10px 0 0;
-  color: #fff;
+  color: var(--secondary-color);
   font-size: 10px;
   text-transform: uppercase;
 }
@@ -1242,13 +1253,13 @@ section {
   bottom: 20px;
   right: 25px;
   position: absolute;
-  color: #fff;
+  color: var(--secondary-color);
   opacity: 0.2;
   font-size: 24px;
 }
 .testi-item h3 {
   float: left;
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: 600;
   margin: 12px 0 0 20px;
 }
@@ -1293,7 +1304,7 @@ section {
   float: left;
   font-weight: 600;
   border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
-  color: #f89020;
+  color: var(--primary-color);
   font-size: 10px;
   margin-top: 10px;
   letter-spacing: 2px;
@@ -1337,7 +1348,7 @@ section {
   transition: all 300ms linear;
 }
 .tc-button:hover {
-  color: #fff;
+  color: var(--secondary-color);
 }
 /*------ btn ------------------------------------------------*/
 .btn {
@@ -1448,7 +1459,7 @@ section {
   bottom: -135px;
   width: 350px;
   height: 350px;
-  background: linear-gradient(90deg, #692c00, #f89020);
+  background: linear-gradient(90deg, #692c00, var(--primary-color));
   border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
   will-change: border-radius, transform, opacity;
   animation: sliderShape 5s linear infinite;
@@ -1573,7 +1584,7 @@ canvas {
 }
 .box-text-wrap_item h5,
 .resume-item h4 {
-  color: #fff;
+  color: var(--secondary-color);
   text-align: left;
   font-weight: 600;
   font-size: 14px;
@@ -1611,7 +1622,7 @@ canvas {
   /* margin-top: -8px; */
 }
 .box-text-wrap_item li span a {
-  color: #f89020;
+  color: var(--primary-color);
 }
 .grid-item-holder {
   float: left;
@@ -1669,7 +1680,7 @@ canvas {
   transition: all 300ms ease-in-out;
 }
 .grid-det_link {
-  color: #fff;
+  color: var(--secondary-color);
   display: block;
   font-size: 14px;
   text-align: left;
@@ -1715,7 +1726,7 @@ canvas {
   border-radius: 0 0 0 4px;
   font-size: 12px;
   z-index: 20;
-  color: #fff;
+  color: var(--secondary-color);
   transition: all 300ms ease-in-out;
   box-shadow: 0px 0px 0px 6px rgb(255 255 255 / 8%);
 }
@@ -1747,7 +1758,7 @@ canvas {
 }
 .gallery-filters a.gallery-filter-active,
 .gallery-filters a:hover {
-  color: #fff;
+  color: var(--secondary-color);
 }
 .center-carousel-wrap {
   margin-bottom: 15px;
@@ -1781,7 +1792,7 @@ canvas {
   top: 0;
 }
 .bold-title {
-  color: #fff;
+  color: var(--secondary-color);
   text-align: left;
   font-weight: 600;
   font-size: 16px;
@@ -1808,7 +1819,7 @@ canvas {
 }
 .content-nav li a.ln,
 .content-nav li a.rn {
-  color: #fff;
+  color: var(--secondary-color);
   font-size: 12px;
   position: relative;
   width: 100%;
@@ -1927,7 +1938,7 @@ canvas {
   margin-top: 12px;
   padding-bottom: 6px;
   font-weight: 600;
-  color: #fff;
+  color: var(--secondary-color);
 }
 .custom-skillbar {
   height: 14px;
@@ -1946,7 +1957,7 @@ canvas {
 }
 .piechart-holder h4 {
   font-size: 12px;
-  color: #fff;
+  color: var(--secondary-color);
   position: relative;
   margin-bottom: 15px;
 }
@@ -1972,7 +1983,7 @@ canvas {
 .percent {
   display: inline-block;
   font-size: 12px;
-  color: #fff;
+  color: var(--secondary-color);
   line-height: 80px;
   z-index: 2;
 }
@@ -2019,7 +2030,7 @@ canvas {
   height: 30px;
   line-height: 22px;
   font-size: 9px;
-  color: #fff;
+  color: var(--secondary-color);
   position: relative;
   z-index: 3;
   border-radius: 50%;
@@ -2135,14 +2146,14 @@ canvas {
   line-height: 50px;
   font-size: 12px;
   position: relative;
-  color: #fff;
+  color: var(--secondary-color);
   font-family: "Poppins", sans-serif;
   appearance: none;
   -webkit-appearance: none;
 }
 .custom-form input::-webkit-input-placeholder,
 .custom-form textarea::-webkit-input-placeholder {
-  color: #ffffff9a;
+  color: var(--secondary-color) fff9a;
   font-weight: 4600;
   font-size: 12px;
   position: relative;
@@ -2150,7 +2161,7 @@ canvas {
 }
 .custom-form input:-moz-placeholder,
 .custom-form textarea:-moz-placeholder {
-  color: #ffffff9a;
+  color: var(--secondary-color) fff9a;
   font-weight: 400;
   font-size: 12px;
   text-transform: uppercase;
@@ -2175,13 +2186,13 @@ canvas {
   -webkit-appearance: none;
   float: left;
   font-family: "Poppins", sans-serif;
-  color: #fff;
+  color: var(--secondary-color);
 }
 #message {
   text-align: left;
   float: left;
   width: 100%;
-  color: #fff;
+  color: var(--secondary-color);
 }
 #message h3 {
   font-size: 18px;
@@ -2194,7 +2205,7 @@ canvas {
 }
 #message p strong {
   font-weight: 800px;
-  color: #fff;
+  color: var(--secondary-color);
 }
 .error_message {
   padding-bottom: 15px;
@@ -2226,7 +2237,7 @@ canvas {
 .single_pb {
   padding: 30px 30px 15px;
   text-align: left;
-  color: white;
+  color: var(--secondary-color);
 }
 .single_pb.project_info h1 {
   font-size: 18px;
@@ -2267,18 +2278,18 @@ canvas {
   padding-left: 15px;
 }
 .single_pb.project_info li::marker {
-  color: #f89020;
+  color: var(--primary-color);
 }
 .used_tools_container {
   margin-top: 20px;
   text-align: left;
 }
 .used_tools_container .used_tools_item {
-  border: 1px solid #f8902065;
+  border: 1px solid var(--primary-color) 65;
   padding: 1px 5px;
   font-size: 10px;
   font-weight: 300;
-  color: white;
+  color: var(--secondary-color);
   border-radius: 5px;
   margin-bottom: 3px;
   display: inline-block;
@@ -2295,7 +2306,7 @@ canvas {
   text-align: left;
   font-size: 10px;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--secondary-color);
   margin: 6px 0 0 0;
 }
 .post-date i {
@@ -2316,7 +2327,7 @@ canvas {
   width: 100%;
   font-weight: 600;
   font-size: 16px;
-  color: #fff;
+  color: var(--secondary-color);
   text-align: left;
   padding-bottom: 14px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -2340,13 +2351,13 @@ canvas {
   padding: 0px 0px 0px 20px;
   width: 100%;
   height: 50px;
-  color: #fff;
+  color: var(--secondary-color);
   appearance: none;
   -webkit-appearance: none;
 }
 .search::-webkit-input-placeholder,
 .search::-webkit-input-placeholder {
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: 500;
   font-size: 12px;
   position: relative;
@@ -2404,7 +2415,7 @@ canvas {
 .widget-posts-descr a {
   font-size: 12px;
   font-weight: 400;
-  color: #fff;
+  color: var(--secondary-color);
 }
 .widget-posts-descr a:hover {
   opacity: 0.6;
@@ -2434,7 +2445,7 @@ canvas {
   width: 100%;
   text-align: left;
   margin-bottom: 6px;
-  color: #fff;
+  color: var(--secondary-color);
 }
 .cat-wid li a {
   color: #999;
@@ -2479,7 +2490,7 @@ canvas {
   border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0 3px 3px 0;
   font-weight: 600;
-  color: #fff;
+  color: var(--secondary-color);
   border-radius: 5px;
   transition: all 300ms linear;
 }
@@ -2499,7 +2510,7 @@ canvas {
 }
 .box-text-wrap .single_post_content {
   text-align: left;
-  color: #fff;
+  color: var(--secondary-color);
 }
 .box-text-wrap .single_post_content p {
   margin-bottom: 10px;
@@ -2547,7 +2558,7 @@ canvas {
   padding-left: 15px;
 }
 .single_post_content li::marker {
-  color: #f89020;
+  color: var(--primary-color);
 }
 
 .post-opt li,
@@ -2592,7 +2603,7 @@ canvas {
 }
 .pagination a.current-page,
 .pagination a:hover {
-  color: #fff;
+  color: var(--secondary-color);
 }
 .pagination a i {
   font-size: 12px;
@@ -2635,7 +2646,7 @@ canvas {
   text-align: left;
   font-size: 15px;
   font-weight: 800;
-  color: #fff;
+  color: var(--secondary-color);
   padding: 20px 0 10px 30px;
 }
 .comment {
@@ -2708,7 +2719,7 @@ ul.children .comment-author {
   float: left;
   font-size: 15px;
   font-weight: 600;
-  color: #fff;
+  color: var(--secondary-color);
   margin-bottom: 15px;
 }
 .comment-meta {
@@ -2725,7 +2736,7 @@ ul.children .comment-author {
   font-weight: 500;
   font-size: 11px;
   margin-top: 10px;
-  color: #fff;
+  color: var(--secondary-color);
   border-radius: 4px;
 }
 .comment-reply-link i {
@@ -2741,7 +2752,7 @@ ul.children .comment-author {
   background: rgba(255, 255, 255, 0.1);
 }
 .comment-body a {
-  color: white;
+  color: var(--secondary-color);
 }
 #addcom .pr-subtitle {
   padding-left: 0;
@@ -2764,10 +2775,10 @@ ul.children .comment-author {
   width: 100%;
   outline: none;
   border-radius: 4px;
-  color: #fff;
+  color: var(--secondary-color);
 }
 #subscribe .enteremail::-webkit-input-placeholder {
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: 600;
   font-size: 10px;
   position: relative;
@@ -2779,7 +2790,7 @@ ul.children .comment-author {
   height: 45px;
   float: right;
   border-radius: 4px;
-  color: #fff;
+  color: var(--secondary-color);
   font-weight: 700;
   border: none;
   font-size: 11px;
@@ -2796,19 +2807,19 @@ ul.children .comment-author {
 }
 .comment-reply-title {
   text-align: left;
-  color: white;
+  color: var(--secondary-color);
   font-size: 15px;
   font-weight: 500;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 .comment-reply-title a {
-  color: white;
+  color: var(--secondary-color);
 }
 .comment-reply-title small a {
   font-size: 12px;
   font-weight: 300;
-  color: #f89020;
+  color: var(--primary-color);
   padding-left: 5px;
 }
 .bg-top {

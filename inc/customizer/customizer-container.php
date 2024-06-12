@@ -151,6 +151,15 @@ new \Kirki\Section(
 		'priority'    => 10,
 	]
 );
+// Add a section "Color Section"
+new \Kirki\Section(
+	'shadin_color_section',
+	[
+		'title'       => esc_html__( 'Colors', 'shadin' ),
+		'description' => esc_html__( "You can edit All Colors from here.", 'shadin' ),
+		'priority'    => 50,
+	]
+);
 
 
 /*-------------------
@@ -160,4 +169,5 @@ All Fields
 
 // Fields Customizer
 require_once get_template_directory() . '/inc/customizer/fields-customizer.php';
+require_once get_template_directory() . '/inc/customizer/overwrite-style.php';
 

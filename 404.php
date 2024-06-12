@@ -9,7 +9,7 @@ get_header();
 	<div class="bg-top"></div>
 	<div class="error-content">
 		<div class="overlay"></div>
-		<div class="bg" data-bg="<?php echo get_template_directory_uri(); ?>/images/bg/2.jpg"></div>
+		<div class="bg" data-bg="<?php echo esc_url(get_template_directory_uri() . '/images/6.png', "shadin") ?>"></div>
 		<div class="error-wrap fl-wrap">
 			<div class="container">
 				<h2><?php echo esc_html('404', 'shadin') ?></h2>

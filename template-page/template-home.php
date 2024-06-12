@@ -205,52 +205,6 @@ get_header();
                             <p>No Testimonials found.</p>
                         </div>
                     <?php endif; ?>
-                    <!-- swiper-slide end-->
-                    <!-- swiper-slide -->
-                    <!-- <div class="swiper-slide">
-                        <div class="testi-item fl-wrap">
-                            <span class="testi-number">02.</span>
-                            <div class="testi-avatar"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/images/avatar/2.jpg"
-                                    alt=""></div>
-                            <h3>Andy Smith</h3>
-                            <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc.
-                                Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed
-                                sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                            <a href="#" class="testi-link" target="_blank">Via Facebook</a>
-                        </div>
-                    </div> -->
-                    <!-- swiper-slide end-->
-                    <!-- swiper-slide -->
-                    <!-- <div class="swiper-slide">
-                        <div class="testi-item fl-wrap">
-                            <span class="testi-number">03.</span>
-                            <div class="testi-avatar"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/images/avatar/3.jpg"
-                                    alt=""></div>
-                            <h3>Mery Trust</h3>
-                            <p>"All the Lorem Ipsum generators on the Internet tend to repeat predefined
-                                chunks as necessary, making this the first true generator on the Internet.
-                                It uses a dictionary of over "</p>
-                            <a href="#" class="testi-link" target="_blank">Via Twitter</a>
-                        </div>
-                    </div> -->
-                    <!-- swiper-slide end-->
-                    <!-- swiper-slide -->
-                    <!-- <div class="swiper-slide">
-                        <div class="testi-item fl-wrap">
-                            <span class="testi-number">04.</span>
-                            <div class="testi-avatar"><img
-                                    src="<?php echo get_template_directory_uri(); ?>/images/avatar/4.jpg"
-                                    alt=""></div>
-                            <h3>Centa Simpson</h3>
-                            <p>"Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc.
-                                Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed
-                                sapien dui. Nulla auctor sit amet sem non porta. "</p>
-                            <a href="#" class="testi-link" target="_blank">Via Facebook</a>
-                        </div>
-                    </div> -->
-                    <!-- swiper-slide end-->
                 </div>
             </div>
         </div>
@@ -261,24 +215,6 @@ get_header();
         <div class="ss-pagination-wrap">
             <div class="tc-pagination slider-pag"></div>
         </div>
-        <!-- client-list -->
-        <!-- <div class="fl-wrap client-list">
-            <ul class="">
-                <li>
-                    <a href="#" target="_blank"><img src="<?php// echo get_template_directory_uri(); ?>/images/clients/1.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#" target="_blank"><img src="<?php// echo get_template_directory_uri(); ?>/images/clients/2.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#" target="_blank"><img src="<?php// echo get_template_directory_uri(); ?>/images/clients/3.png" alt=""></a>
-                </li>
-                <li>
-                    <a href="#" target="_blank"><img src="<?php// echo get_template_directory_uri(); ?>/images/clients/4.png" alt=""></a>
-                </li>
-            </ul>
-        </div> -->
-        <!-- client-list end-->
     </section>
     <?php endif; ?>
     <!--section end-->
