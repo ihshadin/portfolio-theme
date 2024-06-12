@@ -4,7 +4,7 @@
 */
 get_header(); 
 ?>
-<div class="content" data-pagetitle="My story" data-pagesubtitle="Resume" >
+<div class="content" data-pagetitle="My story" data-pagesubtitle="<?php echo esc_attr(the_title(), 'shadin')?>" >
   <div class="bg-top"></div>
   <div class="bg-bottom"></div>
   <!--section  -->
@@ -82,7 +82,7 @@ get_header();
         <div class="edu-qua <?php echo esc_attr($edu_qua_class); ?>">
           <div class="section-title fl-wrap">
             <?php if(get_theme_mod("education_section_title", "Education")): ?>
-              <h3><?php echo esc_html(get_theme_mod('education_section_title', "Education"), 'shadin'); ?></h3>
+              <h3><?php echo esc_html(get_theme_mod('education_section_title', "My Skills"), 'shadin'); ?></h3>
             <?php endif; ?>
           </div>
           <div class="resume-item-container ric_nom fl-wrap">
@@ -110,119 +110,103 @@ get_header();
   </section>
   <!--section end-->
   <!--section  -->
-  <section>
+  <?php if(get_theme_mod('is_skills_show', true)): ?>
+  <section class="skills-section">
     <div class="fl-wrap">
       <div class="row">
         <!-- Layout one -->
         <div class="col-md-6">
           <div class="section-title fl-wrap">
-            <h3>Design Skills</h3>
+            <h3><?php echo esc_html(get_theme_mod('skills_section_title', "Education"), 'shadin'); ?></h3>
           </div>
-          <div class="skillbar-box animaper">
-            <!-- skill  -->
-            <div class="custom-skillbar-title">
-              <span>Photoshop</span>
+          <?php if(get_theme_mod('skills_sec_layout', 'layout-1') === 'layout-1'): ?>
+            <div class="skillbar-box animaper">
+              <!-- skill  -->
+              <?php $skills = get_theme_mod("professional_skills", []); ?>
+              <?php if( ! empty($skills) ): ?>
+                  <?php foreach($skills as $skill): ?>
+                    <div class="custom-skillbar-title">
+                      <span><?php echo esc_html($skill["skill_name"], 'shadin'); ?></span>
+                    </div>
+                    <div class="skill-bar-percent"><?php echo esc_html($skill["skill_value"], 'shadin'); ?>%</div>
+                    <div class="skillbar-bg" data-percent="<?php echo esc_attr($skill["skill_value"], 'shadin'); ?>%">
+                      <div class="custom-skillbar"></div>
+                    </div>
+                  <?php endforeach; ?>
+              <?php else: ?>
+                  <div class="content-box single_pb">
+                      <p>No Skills found.</p>
+                  </div>
+              <?php endif; ?>
             </div>
-            <div class="skill-bar-percent">95%</div>
-            <div class="skillbar-bg" data-percent="95%">
-              <div class="custom-skillbar"></div>
+          <?php else: ?>
+            <!-- Layout two -->
+            <div class="clearfix"></div>
+            <div class="piechart-holder fl-wrap animaper" data-skcolor="#F89020">
+              <!-- 1  -->
+              <?php $skills = get_theme_mod("professional_skills", []); ?>
+              <?php if( ! empty($skills) ): ?>
+                  <?php foreach($skills as $skill): ?>
+                    <div class="piechart">
+                      <span class="chart" data-percent="<?php echo esc_attr($skill["skill_value"], 'shadin'); ?>">
+                        <span class="percent"></span>
+                      </span>
+                      <div class="clearfix"></div>
+                      <div class="skills-description">
+                        <h4><?php echo esc_html($skill["skill_name"], 'shadin'); ?></h4>
+                      </div>
+                    </div>
+                  <?php endforeach; ?>
+              <?php else: ?>
+                  <div class="content-box single_pb">
+                      <p>No Skills found.</p>
+                  </div>
+              <?php endif; ?>
+              <!-- 1 end -->
+              <div class="chart-dec">
+                <span><i class="fal fa-plus"></i></span>
+              </div>
             </div>
-            <!-- skill  -->
-            <div class="custom-skillbar-title">
-              <span>Figma</span>
-            </div>
-            <div class="skill-bar-percent">65%</div>
-            <div class="skillbar-bg" data-percent="65%">
-              <div class="custom-skillbar"></div>
-            </div>
-            <!-- skill  -->
-            <div class="custom-skillbar-title">
-              <span>Sketch</span>
-            </div>
-            <div class="skill-bar-percent">75%</div>
-            <div class="skillbar-bg" data-percent="75%">
-              <div class="custom-skillbar"></div>
-            </div>
-            <!-- skill  -->
-            <div class="custom-skillbar-title">
-              <span>LightRoom</span>
-            </div>
-            <div class="skill-bar-percent">65%</div>
-            <div class="skillbar-bg" data-percent="65%">
-              <div class="custom-skillbar"></div>
-            </div>
-            <!-- skill  -->
-            <div class="custom-skillbar-title">
-              <span>Adobe XD</span>
-            </div>
-            <div class="skill-bar-percent">75%</div>
-            <div class="skillbar-bg" data-percent="75%">
-              <div class="custom-skillbar"></div>
-            </div>
-          </div>
+          <?php endif; ?>
         </div>
-        <!-- Layout two -->
-        <div class="col-md-6">
-          <div class="section-title fl-wrap">
-            <h3>Developer Skills</h3>
-          </div>
-          <div class="clearfix"></div>
-          <div
-            class="piechart-holder fl-wrap animaper"
-            data-skcolor="#F89020"
-          >
-            <!-- 1  -->
-            <div class="piechart">
-              <span class="chart" data-percent="85">
-                <span class="percent"></span>
-              </span>
-              <div class="clearfix"></div>
-              <div class="skills-description">
-                <h4>Jqeury</h4>
-              </div>
+        <?php if(get_theme_mod('is_featured_skills_show', true)): ?>
+          <div class="col-md-6">
+            <div class="section-title fl-wrap featured-skill-title">
+              <h3><?php echo esc_html(get_theme_mod('featured_skills_section_title', "Featured Skills"), 'shadin'); ?></h3>
             </div>
-            <!-- 1 end -->
-            <!-- 2  -->
-            <div class="piechart">
-              <span class="chart" data-percent="95">
-                <span class="percent"></span>
-              </span>
-              <div class="clearfix"></div>
-              <div class="skills-description">
-                <h4>Phyton</h4>
+            <!-- Layout two -->
+            <div class="clearfix"></div>
+            <div class="piechart-holder fl-wrap animaper" data-skcolor="#F89020">
+              <!-- 1  -->
+              <?php $skills = get_theme_mod("featured_skills", []); ?>
+              <?php if( ! empty($skills) ): ?>
+                  <?php foreach($skills as $skill): ?>
+                    <div class="piechart">
+                      <span class="chart" data-percent="<?php echo esc_attr($skill["skill_value"], 'shadin'); ?>">
+                        <span class="percent"></span>
+                      </span>
+                      <div class="clearfix"></div>
+                      <div class="skills-description">
+                        <h4><?php echo esc_html($skill["skill_name"], 'shadin'); ?></h4>
+                      </div>
+                    </div>
+                  <?php endforeach; ?>
+              <?php else: ?>
+                  <div class="content-box single_pb">
+                      <p>No Skills found.</p>
+                  </div>
+              <?php endif; ?>
+              <!-- 1 end -->
+              <div class="chart-dec">
+                <span><i class="fal fa-plus"></i></span>
               </div>
-            </div>
-            <!-- 2 end  -->
-            <!-- 3  -->
-            <div class="piechart">
-              <span class="chart" data-percent="80">
-                <span class="percent"></span>
-              </span>
-              <div class="clearfix"></div>
-              <div class="skills-description">
-                <h4>React JS</h4>
-              </div>
-            </div>
-            <!-- 3  end-->
-            <!-- 3  -->
-            <div class="piechart">
-              <span class="chart" data-percent="70">
-                <span class="percent"></span>
-              </span>
-              <div class="clearfix"></div>
-              <div class="skills-description">
-                <h4>PHP / MYSQL</h4>
-              </div>
-            </div>
-            <!-- 3  end-->
-            <div class="chart-dec">
-              <span><i class="fal fa-plus"></i></span>
             </div>
           </div>
-        </div>
+        <?php endif; ?>
       </div>
     </div>
   </section>
+  <?php endif; ?>
   <!--section end-->
 <?php
 get_footer();

@@ -35,6 +35,14 @@ new \Kirki\Panel(
 		'priority'    => 30,
 	]
 );
+// Add a Panel "Contact Page"
+new \Kirki\Panel(
+	'shadin_contact_page',
+	[
+		'title'       => esc_html__( 'Contact', 'shadin' ),
+		'priority'    => 40,
+	]
+);
 
 /*-------------------
 Follow below for
@@ -123,6 +131,27 @@ new \Kirki\Section(
 		'priority'    => 20,
 	]
 );
+// Add a section "Skills Section"
+new \Kirki\Section(
+	'shadin_skills',
+	[
+		'title'       => esc_html__( 'Skills', 'shadin' ),
+		'description' => esc_html__( "You can add/edit Skills from here.", 'shadin' ),
+        'panel'       => 'shadin_resume',
+		'priority'    => 20,
+	]
+);
+// Add a section "Contact Section"
+new \Kirki\Section(
+	'shadin_contact_section',
+	[
+		'title'       => esc_html__( 'Contact Infos', 'shadin' ),
+		'description' => esc_html__( "You can add/edit Contact infos from here.", 'shadin' ),
+        'panel'       => 'shadin_contact_page',
+		'priority'    => 10,
+	]
+);
+
 
 /*-------------------
 Follow below for

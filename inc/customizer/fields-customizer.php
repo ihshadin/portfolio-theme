@@ -1046,7 +1046,628 @@ new \Kirki\Field\Repeater (
 	],
 );
 
+/*-------------------
+Follow below for
+Skills
+---------------------*/
 
+new \Kirki\Field\Checkbox(
+	[
+		'settings'    => 'is_skills_show',
+		'label'       => esc_html__( 'Do you want to show Skills', 'shadin' ),
+		'section'     => 'shadin_skills',
+		'default'     => true,
+		'priority'    => 10,
+	]
+);
+new \Kirki\Field\Text(
+	[
+		'settings' => 'skills_section_title',
+		'label'    => esc_html__( "Section Tittle", 'shadin' ),
+		'default'  => esc_html__( "My Skills", 'shadin' ),
+        'input_attrs' => [
+            'placeholder' => esc_html__( 'Enter text here...', 'shadin' ),
+        ],
+        'section'  => 'shadin_skills',
+		'priority' => 20,
+        'transport'   => 'postMessage',
+        'partial_refresh' => [
+            'skills_section_title' => [
+                'selector'      => '.skills-section .section-title h3',
+                'render_callback' => function() {
+                    return get_theme_mod( 'skills_section_title' );
+                },
+            ],
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_skills_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Select(
+	[
+		'settings'      => 'skills_sec_layout',
+		'label'         => esc_html__( 'Skills Layout', 'shadin' ),
+		// 'description'   => esc_html__( 'Add skills that you are an expert in', 'shadin' ),
+        'default'       => 'layout-1',
+		'section'       => 'shadin_skills',
+		'priority'      => 30,
+		'choices'       => [
+            'layout-1' => esc_html__("Layout One", 'shadin'),
+            'layout-2' => esc_html__("Layout Two", 'shadin')
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_skills_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Repeater (
+    [
+		'settings'      => 'professional_skills',
+		'label'         => esc_html__( 'Skills', 'shadin' ),
+        'button_label'  => esc_html__( 'Add New Skill', 'shadin' ),
+		'section'       => 'shadin_skills',
+		'priority'      => 40,
+        'transport'     => 'postMessage',
+        'row_label'     => [
+            'type'          => 'field',
+            'value'         => esc_html__('Skill', 'shadin' ),
+            'field'         => 'skill_name',
+        ],
+		'default'       => [
+            [
+                'skill_name'         => esc_html__( 'WordPress', 'shadin' ),
+                'skill_value'         => esc_html__( 90, 'shadin' ),
+            ],
+            [
+                'skill_name'         => esc_html__( 'Elementor', 'shadin' ),
+                'skill_value'         => esc_html__( 95, 'shadin' ),
+            ],
+            [
+                'skill_name'         => esc_html__( 'Divi', 'shadin' ),
+                'skill_value'         => esc_html__( 80, 'shadin' ),
+            ]
+		],
+		'fields'        => [
+			'skill_name' 	=> [
+				'type'          => 'text',
+				'label'         => esc_html__( 'Skill Name', 'shadin' ),
+				'default'       => 'WordPress',
+			],
+			'skill_value' 	=> [
+				'type'          => 'number',
+				'label'         => esc_html__( 'Skill Value', 'shadin' ),
+				'default'       => 90,
+			],
+		],
+        'active_callback' => [
+            [
+                'setting'  => 'is_skills_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	],
+);
+new \Kirki\Field\Checkbox(
+	[
+		'settings'    => 'is_featured_skills_show',
+		'label'       => esc_html__( 'Do you want to show "Featured Skills"', 'shadin' ),
+		'section'     => 'shadin_skills',
+		'default'     => true,
+		'priority'    => 50,
+        'active_callback' => [
+            [
+                'setting'  => 'is_skills_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Text(
+	[
+		'settings' => 'featured_skills_section_title',
+		'label'    => esc_html__( "Section Tittle", 'shadin' ),
+		'default'  => esc_html__( "Featured Skills", 'shadin' ),
+        'input_attrs' => [
+            'placeholder' => esc_html__( 'Enter text here...', 'shadin' ),
+        ],
+        'section'  => 'shadin_skills',
+		'priority' => 60,
+        'transport'   => 'postMessage',
+        'partial_refresh' => [
+            'featured_skills_section_title' => [
+                'selector'      => '.skills-section .featured-skill-title h3',
+                'render_callback' => function() {
+                    return get_theme_mod( 'featured_skills_section_title' );
+                },
+            ],
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_skills_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+            [
+                'setting'  => 'is_featured_skills_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Repeater (
+    [
+		'settings'      => 'featured_skills',
+		'label'         => esc_html__( 'Featured Skills', 'shadin' ),
+        'button_label'  => esc_html__( 'Add New Skill', 'shadin' ),
+		'section'       => 'shadin_skills',
+		'priority'      => 70,
+        'transport'     => 'postMessage',
+        'choices' => [
+            'limit' => 4
+        ],
+        'row_label'     => [
+            'type'          => 'field',
+            'value'         => esc_html__('Skill', 'shadin' ),
+            'field'         => 'skill_name',
+        ],
+		'default'       => [
+            [
+                'skill_name'         => esc_html__( 'WordPress', 'shadin' ),
+                'skill_value'         => esc_html__( 90, 'shadin' ),
+            ],
+            [
+                'skill_name'         => esc_html__( 'Elementor', 'shadin' ),
+                'skill_value'         => esc_html__( 95, 'shadin' ),
+            ],
+            [
+                'skill_name'         => esc_html__( 'Divi', 'shadin' ),
+                'skill_value'         => esc_html__( 80, 'shadin' ),
+            ]
+		],
+		'fields'        => [
+			'skill_name' 	=> [
+				'type'          => 'text',
+				'label'         => esc_html__( 'Skill Name', 'shadin' ),
+				'default'       => 'WordPress',
+			],
+			'skill_value' 	=> [
+				'type'          => 'number',
+				'label'         => esc_html__( 'Skill Value', 'shadin' ),
+				'default'       => 90,
+			],
+		],
+        'active_callback' => [
+            [
+                'setting'  => 'is_skills_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+            [
+                'setting'  => 'is_featured_skills_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	],
+);
 
+/*-------------------
+Follow below for
+Contact Section
+---------------------*/
 
+new \Kirki\Field\Checkbox(
+	[
+		'settings'    => 'is_contact_info_show',
+		'label'       => esc_html__( 'Do you want to show Contact Infos Section', 'shadin' ),
+		'section'     => 'shadin_contact_section',
+		'default'     => true,
+		'priority'    => 10,
+	]
+);
+new \Kirki\Field\Text(
+	[
+		'settings' => 'contact_info_section_title',
+		'label'    => esc_html__( "Section Tittle", 'shadin' ),
+		'default'  => esc_html__( "Contact Information", 'shadin' ),
+        'input_attrs' => [
+            'placeholder' => esc_html__( 'Enter text here...', 'shadin' ),
+        ],
+        'section'  => 'shadin_contact_section',
+		'priority' => 20,
+        'transport'   => 'postMessage',
+        'partial_refresh' => [
+            'contact_info_section_title' => [
+                'selector'      => '.contact-infos .section-title h3',
+                'render_callback' => function() {
+                    return get_theme_mod( 'contact_info_section_title' );
+                },
+            ],
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+// new \Kirki\Field\Repeater (
+//     [
+// 		'settings'      => 'contact_infos',
+// 		'label'         => esc_html__( 'Contact Infos', 'shadin' ),
+//         'button_label'  => esc_html__( 'Add New info', 'shadin' ),
+// 		'section'       => 'shadin_contact_section',
+// 		'priority'      => 70,
+//         'transport'     => 'postMessage',
+//         'choices' => [
+//             'limit' => 4
+//         ],
+//         'row_label'     => [
+//             'type'          => 'field',
+//             'value'         => esc_html__('Skill', 'shadin' ),
+//             'field'         => 'skill_name',
+//         ],
+// 		'default'       => [
+//             [
+//                 'skill_name'         => esc_html__( 'WordPress', 'shadin' ),
+//                 'skill_value'         => esc_html__( 90, 'shadin' ),
+//             ],
+//             [
+//                 'skill_name'         => esc_html__( 'Elementor', 'shadin' ),
+//                 'skill_value'         => esc_html__( 95, 'shadin' ),
+//             ],
+//             [
+//                 'skill_name'         => esc_html__( 'Divi', 'shadin' ),
+//                 'skill_value'         => esc_html__( 80, 'shadin' ),
+//             ]
+// 		],
+// 		'fields'        => [
+// 			'con_info_title' 	=> [
+// 				'type'          => 'text',
+// 				'label'         => esc_html__( 'Title', 'shadin' ),
+// 				'default'       => 'My Emails',
+// 			],
+// 			'con_info_desc' 	=> [
+// 				'type'          => 'text',
+// 				'label'         => esc_html__( 'Description', 'shadin' ),
+// 				'default'       => 90,
+// 			],
+// 			'con_info_value' 	=> [
+// 				'type'          => 'text',
+// 				'label'         => esc_html__( 'Value', 'shadin' ),
+// 				'default'       => 90,
+// 			],
+// 		],
+//         'active_callback' => [
+//             [
+//                 'setting'  => 'is_skills_show',
+//                 'operator' => '==',
+//                 'value'    => true,
+//             ],
+//             [
+//                 'setting'  => 'is_featured_skills_show',
+//                 'operator' => '==',
+//                 'value'    => true,
+//             ],
+//         ],
+// 	],
+// );
+new \Kirki\Field\Checkbox(
+	[
+		'settings'    => 'is_email_info_show',
+		'label'       => esc_html__( 'Do you want to show Email info Box', 'shadin' ),
+		'section'     => 'shadin_contact_section',
+		'default'     => true,
+		'priority'    => 30,
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Text(
+	[
+		'settings' => 'contact_info_email_title',
+		'label'    => esc_html__( "Email Tittle", 'shadin' ),
+		'default'  => esc_html__( "My Emails", 'shadin' ),
+        'input_attrs' => [
+            'placeholder' => esc_html__( 'Enter text here...', 'shadin' ),
+        ],
+        'section'  => 'shadin_contact_section',
+		'priority' => 40,
+        'transport'   => 'postMessage',
+        'partial_refresh' => [
+            'contact_info_email_title' => [
+                'selector'      => '.contact-infos .email-box h4',
+                'render_callback' => function() {
+                    return get_theme_mod( 'contact_info_email_title' );
+                },
+            ],
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+            [
+                'setting'  => 'is_email_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Textarea(
+	[
+		'settings'          => 'contact_info_email_description',
+		'label'             => esc_html__( 'Email Box description', 'shadin' ),
+		'default'           => esc_html__( "Feel Free to send email to me. I am always open to discuss about new projects", 'shadin' ),
+		'section'           => 'shadin_contact_section',
+		'priority'          => 50,
+        'transport'         => 'postMessage',
+        'partial_refresh'   => [
+            'contact_info_email_description' => [
+                'selector'      => '.contact-infos .email-box p',
+                'render_callback' => function() {
+                    return get_theme_mod( 'contact_info_email_description' );
+                },
+            ],
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+            [
+                'setting'  => 'is_email_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Text(
+	[
+		'settings' => 'contact_info_email',
+		'label'    => esc_html__( "Email address", 'shadin' ),
+		'default'  => esc_html__( "example@gmail.com", 'shadin' ),
+        'input_attrs' => [
+            'placeholder' => esc_html__( 'Enter text here...', 'shadin' ),
+        ],
+        'section'  => 'shadin_contact_section',
+		'priority' => 60,
+        'transport'   => 'postMessage',
+        'partial_refresh' => [
+            'contact_info_email' => [
+                'selector'      => '.contact-infos .email-box a',
+                'render_callback' => function() {
+                    return get_theme_mod( 'contact_info_email' );
+                },
+            ],
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+            [
+                'setting'  => 'is_email_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
 
+new \Kirki\Field\Checkbox(
+	[
+		'settings'    => 'is_phone_info_show',
+		'label'       => esc_html__( 'Do you want to show Phone Infos Box', 'shadin' ),
+		'section'     => 'shadin_contact_section',
+		'default'     => true,
+		'priority'    => 70,
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Text(
+	[
+		'settings' => 'contact_info_phone_title',
+		'label'    => esc_html__( "Phone Title", 'shadin' ),
+		'default'  => esc_html__( "My Phones", 'shadin' ),
+        'input_attrs' => [
+            'placeholder' => esc_html__( 'Enter text here...', 'shadin' ),
+        ],
+        'section'  => 'shadin_contact_section',
+		'priority' => 80,
+        'transport'   => 'postMessage',
+        'partial_refresh' => [
+            'contact_info_phone_title' => [
+                'selector'      => '.contact-infos .phone-box h4',
+                'render_callback' => function() {
+                    return get_theme_mod( 'contact_info_phone_title' );
+                },
+            ],
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+            [
+                'setting'  => 'is_phone_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Textarea(
+	[
+		'settings'          => 'contact_info_phone_description',
+		'label'             => esc_html__( 'Phone Box description', 'shadin' ),
+		'default'           => esc_html__( "Feel Free to call to me. I am always open to discuss about new projects", 'shadin' ),
+		'section'           => 'shadin_contact_section',
+		'priority'          => 90,
+        'transport'         => 'postMessage',
+        'partial_refresh'   => [
+            'contact_info_phone_description' => [
+                'selector'      => '.contact-infos .phone-box p',
+                'render_callback' => function() {
+                    return get_theme_mod( 'contact_info_phone_description' );
+                },
+            ],
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+            [
+                'setting'  => 'is_phone_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Text(
+	[
+		'settings' => 'contact_info_phone',
+		'label'    => esc_html__( "Phone Number", 'shadin' ),
+		'default'  => esc_html__( "+14844578289", 'shadin' ),
+        'input_attrs' => [
+            'placeholder' => esc_html__( 'Enter text here...', 'shadin' ),
+        ],
+        'section'  => 'shadin_contact_section',
+		'priority' => 100,
+        'transport'   => 'postMessage',
+        'partial_refresh' => [
+            'contact_info_phone' => [
+                'selector'      => '.contact-infos .phone-box a',
+                'render_callback' => function() {
+                    return get_theme_mod( 'contact_info_phone' );
+                },
+            ],
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+            [
+                'setting'  => 'is_phone_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+
+new \Kirki\Field\Checkbox(
+	[
+		'settings'    => 'is_location_info_show',
+		'label'       => esc_html__( 'Do you want to show Location Infos Box', 'shadin' ),
+		'section'     => 'shadin_contact_section',
+		'default'     => true,
+		'priority'    => 110,
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Text(
+	[
+		'settings' => 'contact_info_location_title',
+		'label'    => esc_html__( "Location Tittle", 'shadin' ),
+		'default'  => esc_html__( "My Location", 'shadin' ),
+        'input_attrs' => [
+            'placeholder' => esc_html__( 'Enter text here...', 'shadin' ),
+        ],
+        'section'  => 'shadin_contact_section',
+		'priority' => 120,
+        'transport'   => 'postMessage',
+        'partial_refresh' => [
+            'contact_info_location_title' => [
+                'selector'      => '.contact-infos .location-box h4',
+                'render_callback' => function() {
+                    return get_theme_mod( 'contact_info_location_title' );
+                },
+            ],
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+            [
+                'setting'  => 'is_location_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
+new \Kirki\Field\Textarea(
+	[
+		'settings'          => 'contact_info_location_description',
+		'label'             => esc_html__( 'Your Address', 'shadin' ),
+		'default'           => esc_html__( "1600 Broadway, New York, USA", 'shadin' ),
+		'section'           => 'shadin_contact_section',
+		'priority'          => 130,
+        'transport'         => 'postMessage',
+        'partial_refresh'   => [
+            'contact_info_location_description' => [
+                'selector'      => '.contact-infos .location-box p',
+                'render_callback' => function() {
+                    return get_theme_mod( 'contact_info_location_description' );
+                },
+            ],
+        ],
+        'active_callback' => [
+            [
+                'setting'  => 'is_contact_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+            [
+                'setting'  => 'is_location_info_show',
+                'operator' => '==',
+                'value'    => true,
+            ],
+        ],
+	]
+);
