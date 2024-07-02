@@ -128,135 +128,135 @@ get_header();
 			
 			<div class="col-md-4">
 				<div class="main-sidebar fixed-bar fl-wrap">
-				<div class="widget-sidebar ws_column">
-					<!-- widget -->
-					<!-- <div class="widget-inner">
-						<form action="#">
-							<input name="s" id="se2" type="text" class="search" placeholder="Search..." value=""/>
-							<button class="search-submit" id="submit_btn2">
-								<i class="fa fa-search transition"></i>
-							</button>
-						</form>
-					</div> -->
-					<!-- widget end  -->
-					<!-- widget -->
-					<!-- <h3>Tags</h3>
-					<div class="widget-inner">
-						<ul class="post-tags">
-							<li><a href="#">Paint</a></li>
-							<li><a href="#">Construction</a></li>
-							<li><a href="#">Build</a></li>
-							<li><a href="#">Poster</a></li>
-							<li><a href="#">Trends</a></li>
-						</ul>
-					</div> -->
-					<!-- widget end  -->
-					<!-- widget -->
-					<!-- <h3>Categories</h3>
-					<div class="widget-inner">
-						<ul class="cat-wid">
-							<li class="cat-item">
-							<a href="#">Standard</a><span>3</span>
-							</li>
-							<li class="cat-item">
-							<a href="#">Video</a> <span>6</span>
-							</li>
-							<li class="cat-item">
-							<a href="#">Gallery</a> <span>12</span>
-							</li>
-							<li class="cat-item">
-							<a href="#">Quotes</a> <span>4</span>
-							</li>
-						</ul>
-					</div> -->
-					<!-- widget end  -->
-					<!-- widget  -->
-					<!-- <h3>Last Posts</h3>
-					<div class="widget-inner">
-						<ul class="widget-posts">
-							<li class="clearfix">
-							<a
-								href="blog-single.html"
-								class="widget-posts-img"
-								><img
-								src="images/folio/4.jpg"
-								class="respimg"
-								alt=""
-							/></a>
-							<div class="widget-posts-descr">
-								<a href="#" title=""
-								>Vivamus dapibus rutrum</a
-								>
-								<span class="widget-posts-date"
-								><i class="far fa-calendar"></i> 27 Mar 2021
-								</span>
-							</div>
-							</li>
-							<li class="clearfix">
-							<a
-								href="blog-single.html"
-								class="widget-posts-img"
-								><img
-								src="images/folio/5.jpg"
-								class="respimg"
-								alt=""
-							/></a>
-							<div class="widget-posts-descr">
-								<a href="#" title=""> Integer sagittis</a>
-								<span class="widget-posts-date"
-								><i class="far fa-calendar"></i> 12 May
-								2021</span
-								>
-							</div>
-							</li>
-							<li class="clearfix">
-							<a
-								href="blog-single.html"
-								class="widget-posts-img"
-								><img
-								src="images/folio/6.jpg"
-								class="respimg"
-								alt=""
-							/></a>
-							<div class="widget-posts-descr">
-								<a href="#" title="">Snowy Mountains Trip</a>
-								<span class="widget-posts-date"
-								><i class="far fa-calendar"></i> 22 Feb 2021
-								</span>
-							</div>
-							</li>
-						</ul>
-					</div> -->
-					<!-- widget end  -->
-					<!-- widget -->
-					<!-- <h3>Subscribe</h3>
-					<div class="widget-inner">
-						<div class="subcribe-form fl-wrap">
-							<form id="subscribe">
-							<input
-								class="enteremail"
-								name="email"
-								id="subscribe-email"
-								placeholder="Your Email"
-								spellcheck="false"
-								type="text"
-							/>
-							<button
-								type="submit"
-								id="subscribe-button"
-								class="subscribe-button gradient-bg"
-							>
-								Submit
-							</button>
-							<label
-								for="subscribe-email"
-								class="subscribe-message"
-							></label>
+					<div class="widget-sidebar ws_column">
+						<!-- widget -->
+						<!-- <div class="widget-inner">
+							<form action="#">
+								<input name="s" id="se2" type="text" class="search" placeholder="Search..." value=""/>
+								<button class="search-submit" id="submit_btn2">
+									<i class="fa fa-search transition"></i>
+								</button>
 							</form>
-						</div>
-					</div> -->
-					<!-- widget end  -->
-				</div>
+						</div> -->
+						<!-- widget end  -->
+						<!-- widget -->
+						<!-- <h3>Tags</h3>
+						<div class="widget-inner">
+							<ul class="post-tags">
+								<li><a href="#">Paint</a></li>
+								<li><a href="#">Construction</a></li>
+								<li><a href="#">Build</a></li>
+								<li><a href="#">Poster</a></li>
+								<li><a href="#">Trends</a></li>
+							</ul>
+						</div> -->
+						<!-- widget end  -->
+						<!-- widget -->
+						<!-- <h3>Categories</h3>
+						<div class="widget-inner">
+							<ul class="cat-wid">
+								<li class="cat-item">
+								<a href="#">Standard</a><span>3</span>
+								</li>
+								<li class="cat-item">
+								<a href="#">Video</a> <span>6</span>
+								</li>
+								<li class="cat-item">
+								<a href="#">Gallery</a> <span>12</span>
+								</li>
+								<li class="cat-item">
+								<a href="#">Quotes</a> <span>4</span>
+								</li>
+							</ul>
+						</div> -->
+						<!-- widget end  -->
+						<!-- widget  -->
+						<!-- <h3>Last Posts</h3>
+						<div class="widget-inner">
+							<ul class="widget-posts">
+								<li class="clearfix">
+								<a
+									href="blog-single.html"
+									class="widget-posts-img"
+									><img
+									src="images/folio/4.jpg"
+									class="respimg"
+									alt=""
+								/></a>
+								<div class="widget-posts-descr">
+									<a href="#" title=""
+									>Vivamus dapibus rutrum</a
+									>
+									<span class="widget-posts-date"
+									><i class="far fa-calendar"></i> 27 Mar 2021
+									</span>
+								</div>
+								</li>
+								<li class="clearfix">
+								<a
+									href="blog-single.html"
+									class="widget-posts-img"
+									><img
+									src="images/folio/5.jpg"
+									class="respimg"
+									alt=""
+								/></a>
+								<div class="widget-posts-descr">
+									<a href="#" title=""> Integer sagittis</a>
+									<span class="widget-posts-date"
+									><i class="far fa-calendar"></i> 12 May
+									2021</span
+									>
+								</div>
+								</li>
+								<li class="clearfix">
+								<a
+									href="blog-single.html"
+									class="widget-posts-img"
+									><img
+									src="images/folio/6.jpg"
+									class="respimg"
+									alt=""
+								/></a>
+								<div class="widget-posts-descr">
+									<a href="#" title="">Snowy Mountains Trip</a>
+									<span class="widget-posts-date"
+									><i class="far fa-calendar"></i> 22 Feb 2021
+									</span>
+								</div>
+								</li>
+							</ul>
+						</div> -->
+						<!-- widget end  -->
+						<!-- widget -->
+						<!-- <h3>Subscribe</h3>
+						<div class="widget-inner">
+							<div class="subcribe-form fl-wrap">
+								<form id="subscribe">
+								<input
+									class="enteremail"
+									name="email"
+									id="subscribe-email"
+									placeholder="Your Email"
+									spellcheck="false"
+									type="text"
+								/>
+								<button
+									type="submit"
+									id="subscribe-button"
+									class="subscribe-button gradient-bg"
+								>
+									Submit
+								</button>
+								<label
+									for="subscribe-email"
+									class="subscribe-message"
+								></label>
+								</form>
+							</div>
+						</div> -->
+						<!-- widget end  -->
+					</div>
 				</div>
 			</div>
 			<!-- sidebar end -->

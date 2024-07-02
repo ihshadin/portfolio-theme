@@ -75,13 +75,17 @@
 .gradient-bg {
   background: linear-gradient(
     90deg,
-    var(--primary-color),
-    var(--primary-color)
+    var(--gradient-secondary-color),
+    var(--gradient-primary-color)
   );
 }
 .gradient-bg2,
 .page-subtitle a {
-  background: linear-gradient(-90deg, #f5bf4f, var(--primary-color));
+  background: linear-gradient(
+    -90deg,
+    var(--gradient-secondary-color),
+    var(--gradient-primary-color)
+  );
 }
 .pl-spinner:before {
   border-top-color: var(--primary-color);

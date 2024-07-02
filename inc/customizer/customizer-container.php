@@ -160,6 +160,13 @@ new \Kirki\Section(
 		'priority'    => 50,
 	]
 );
+new \Kirki\Section(
+	'shadin_others_section',
+	[
+		'title'       => esc_html__( 'Others', 'shadin' ),
+		'priority'    => 60,
+	]
+);
 
 
 /*-------------------

@@ -26,7 +26,6 @@ get_header();
                         <?php 
                             $selected_skills = get_theme_mod( 'skills_list', [] );
                             $choices_skills = skills_list();
-                            // var_dump($choices_skills);
                             if( ! empty($selected_skills) ) {
                                 foreach($selected_skills as $skill) {
                                     if(isset($choices_skills[$skill])) {
@@ -77,7 +76,6 @@ get_header();
                     <!-- inline-facts -->
                     <?php
                         $achievements = get_theme_mod("achievements_fields", []);
-
                         if( ! empty($achievements) ) {
                             foreach($achievements as $achievement) {
                                 ?>

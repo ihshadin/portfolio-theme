@@ -1617,12 +1617,139 @@ new \Kirki\Field\Textarea(
         ],
 	]
 );
+
+/*-------------------
+Follow below for
+Colors Section
+---------------------*/
+
 new \Kirki\Field\Color(
     [
-        'settings'    => 'theme_primary_color',
+        'settings'    => 'primary_color',
         'label'       => esc_html__('Primary Color', 'shadin'),
+        'description'       => esc_html__("Add a color for your whole website's as primary color", 'shadin'),
         'section'     => 'shadin_color_section',
         'default'     => '#f89020',
-        'transport'   => 'postMessage',
+        'transport'   => 'refresh',
     ]
+);
+new \Kirki\Field\Color(
+    [
+        'settings'    => 'secondary_color',
+        'label'       => esc_html__('Secondary Color', 'shadin'),
+        'description'       => esc_html__("Add a color for your whole website's as secondary color", 'shadin'),
+        'section'     => 'shadin_color_section',
+        'default'     => '#FFFFFF',
+        'transport'   => 'refresh',
+    ]
+);
+new \Kirki\Field\Color(
+    [
+        'settings'    => 'accent_color',
+        'label'       => esc_html__('Accent Color', 'shadin'),
+        'description'       => esc_html__("Add a color for your whole website's as accent color", 'shadin'),
+        'section'     => 'shadin_color_section',
+        'default'     => 'rgba(255, 255, 255, 0.6)',
+        'transport'   => 'refresh',
+		'choices'     => [
+			'alpha' => true,
+		],
+    ]
+);
+new \Kirki\Field\Color(
+    [
+        'settings'    => 'box_shadow_color',
+        'label'       => esc_html__('Box Shadow Color', 'shadin'),
+        'description'       => esc_html__("Add a color for your whole website's as Box shadow color", 'shadin'),
+        'section'     => 'shadin_color_section',
+        'default'     => 'rgba(0, 0, 0, 0.1)',
+        'transport'   => 'refresh',
+		'choices'     => [
+			'alpha' => true,
+		],
+    ]
+);
+new \Kirki\Field\Color(
+    [
+        'settings'    => 'border_color',
+        'label'       => esc_html__('Border Color', 'shadin'),
+        'description'       => esc_html__("Add a color for your whole website's as border color", 'shadin'),
+        'section'     => 'shadin_color_section',
+        'default'     => 'rgba(255, 255, 255, 0.1)',
+        'transport'   => 'refresh',
+		'choices'     => [
+			'alpha' => true,
+		],
+    ]
+);
+new \Kirki\Field\Multicolor(
+    [
+        'settings'    => 'gradient_colors',
+        'label'       => esc_html__('Gradient Colors', 'shadin'),
+        'description'       => esc_html__("Those colors will effect on as Gradient colors", 'shadin'),
+        'section'     => 'shadin_color_section',
+        'priority'  => 10,
+        'transport'   => 'refresh',
+		'default'   => [
+			'gradient_primary_color'   => '#f89020',
+			'gradient_secondary_color'  => '#f5bf4f',
+		],
+		'choices'   => [
+			'gradient_primary_color'     => esc_html__( 'Primary Color', 'shadin' ),
+			'gradient_secondary_color'    => esc_html__( 'Secondary Color', 'shadin' ),
+		],
+		'alpha'     => true,
+    ]
+);
+new \Kirki\Field\Multicolor(
+	[
+		'settings'  => 'background_colors',
+		'label'     => esc_html__( 'Background Colors', 'shadin' ),
+		'description'     => esc_html__( 'This color will effect on as a box background color', 'shadin' ),
+		'section'   => 'shadin_color_section',
+		'priority'  => 10,
+        'transport'   => 'refresh',
+		'default'   => [
+			'primary_bg_color'   => '#2e3a42',
+			'secondary_bg_color'  => '#29323b',
+		],
+		'choices'   => [
+			'primary_bg_color'     => esc_html__( 'Primary Color', 'shadin' ),
+			'secondary_bg_color'    => esc_html__( 'Secondary Color', 'shadin' ),
+		],
+		'alpha'     => true,
+	]
+);
+new \Kirki\Field\Multicolor(
+	[
+		'settings'  => 'body_bg_colors',
+		'label'     => esc_html__( 'Body Background Colors', 'shadin' ),
+		'description'     => esc_html__( 'Choose two colors for website background color. if you want solid color then you can choose same color', 'shadin' ),
+		'section'   => 'shadin_color_section',
+		'priority'  => 10,
+        'transport'   => 'refresh',
+		'default'   => [
+			'body_bg_color_1'   => '#313e45',
+			'body_bg_color_2'  => '#080b10',
+		],
+		'choices'   => [
+			'body_bg_color_1'     => esc_html__( 'Body Color One', 'shadin' ),
+			'body_bg_color_2'    => esc_html__( 'Body Color Two', 'shadin' ),
+		],
+		'alpha'     => true,
+	]
+);
+// Font family
+new \Kirki\Field\Typography(
+	[
+		'settings'    => 'primary_font_family',
+		'label'       => esc_html__( 'Primary Font Family', 'shadin' ),
+		'description' => esc_html__( 'The font will effect on whole website.', 'shadin' ),
+		'section'     => 'shadin_others_section',
+		'priority'    => 10,
+		'transport'   => 'refresh',
+		'default'     => [
+			'font-family'     => 'Poppins',
+		],
+	]
 );
