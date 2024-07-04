@@ -29,7 +29,6 @@ function shadin_custom_colors_css() {
         --body-bg-color-1: {$body_bg_color1};
         --body-bg-color-2: {$body_bg_color2};
         --hero-overlay-color: {$hero_overlay_color};
-        --typography_setting: {$typography_setting};
 
         --primary-font-family: {$primary_font_family};
     }";

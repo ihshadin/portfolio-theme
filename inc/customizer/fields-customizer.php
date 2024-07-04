@@ -1,7 +1,7 @@
 <?php
 
 
-include( get_template_directory() . '/inc/customizer/choices-options.php' );
+get_template_part( 'inc/customizer/choices-options' );
 $skills_list = skills_list();
 
 /*-------------------
@@ -12,18 +12,18 @@ Header Parts
 // Website Title field
 new \Kirki\Field\Text(
 	[
-		'settings' => 'your_name',
-		'label'    => esc_html__( 'Your Name', 'shadin' ),
-		'section'  => 'shadin_header_sidebar',
-		'default'  => esc_html__( 'Imam Hossain', 'shadin' ),
-        'description' => esc_html__( 'This name will be SEO friendly', 'shadin' ),
-		'priority' => 10,
-        'transport'   => 'postMessage',
+		'settings'      => 'your_name',
+		'label'         => esc_html__( 'Your Name', 'kirki' ),
+		'section'       => 'shadin_header_sidebar',
+		'default'       => esc_html__( 'Imam Hossain', 'kirki' ),
+        'description'   => esc_html__( 'This name will be SEO friendly', 'kirki' ),
+		'priority'      => 10,
+        'transport'     => 'postMessage',
         'partial_refresh' => [
             'your_name' => [
                 'selector'      => '.header-titile h1',
                 'render_callback' => function() {
-                    return get_theme_mod( 'your_name' );
+                    return esc_html( get_theme_mod( 'your_name' ) );
                 },
             ],
         ],

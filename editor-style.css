@@ -1,0 +1,40 @@
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+h6 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 1.2rem;
+}
+h4 {
+  font-size: 1.3rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.8rem;
+}
+h1 {
+  font-size: 2rem;
+}
+.aligncenter {
+  text-align: center;
+}
+.alignleft {
+  text-align: left;
+}
+.alignright {
+  text-align: right;
+}
+.bypostauthor,
+.gallery-caption,
+.sticky,
+.wp-caption-text,
+.wp-caption {
+  margin: auto;
+}

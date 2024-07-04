@@ -63,9 +63,9 @@ get_header();
             ?>
               <div class="gallery-item <?php echo join(' ', $class_names); ?>">
                 <div class="grid-item-holder hov_zoom">
-                  <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php esc_html(the_title(), 'shadin') ?>" />
+                  <img src="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" alt="<?php esc_attr(the_title(), 'shadin') ?>" />
                   <div class="grid-det">
-                    <a href="<?php echo get_the_post_thumbnail_url(); ?>" class="grid-media-zoom image-popup" >
+                    <a href="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" class="grid-media-zoom image-popup" >
                       <i class="far fa-search"></i>
                     </a>
                     <div class="grid-det_category">

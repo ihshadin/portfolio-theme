@@ -52,7 +52,7 @@ get_header();
               <span class="card-item_num"><?php echo esc_html('01.', 'shadin'); ?></span>
               <h4><?php echo esc_html(get_theme_mod('contact_info_email_title', "My Email"), 'shadin'); ?></h4>
               <p><?php echo esc_html(get_theme_mod('contact_info_email_description', "Feel Free to send email to me. I am always open to discuss about new projects"), "shadin") ?></p>
-              <a href="mailto:<?php echo esc_html(get_theme_mod('contact_info_email', 'example@gmail.com'), 'shadin'); ?>" class="card-link"><?php echo esc_html(get_theme_mod('contact_info_email', 'example@gmail.com'), 'shadin'); ?></a>
+              <a href="mailto:<?php echo esc_attr(get_theme_mod('contact_info_email', 'example@gmail.com'), 'shadin'); ?>" class="card-link"><?php echo esc_html(get_theme_mod('contact_info_email', 'example@gmail.com'), 'shadin'); ?></a>
             </div>
           </div>
         <?php endif; ?>
@@ -65,7 +65,7 @@ get_header();
               <span class="card-item_num"><?php echo esc_html('02.', 'shadin'); ?></span>
               <h4><?php echo esc_html(get_theme_mod('contact_info_phone_title', "My Phones"), 'shadin'); ?></h4>
               <p><?php echo esc_html(get_theme_mod('contact_info_phone_description', "Feel Free Call to me. I am always open to discuss about new projects"), 'shadin'); ?></p>
-              <a href="tel:<?php echo get_theme_mod('contact_info_phone', '+14844578289'); ?>" class="card-link"><?php echo esc_html(get_theme_mod('contact_info_phone', '+14844578289'), 'shadin'); ?></a>
+              <a href="tel:<?php echo esc_attr(get_theme_mod('contact_info_phone', '+14844578289')); ?>" class="card-link"><?php echo esc_html(get_theme_mod('contact_info_phone', '+14844578289'), 'shadin'); ?></a>
             </div>
           </div>
         <?php endif; ?>

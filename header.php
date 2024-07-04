@@ -45,6 +45,7 @@
                         <nav class="nav-inner fl-wrap" id="menu">
 							<?php 
 								$menu_args = array(
+                                    'theme_location' => 'primary-menu',
 									'menu'         => 'primary-menu',
 									'container'    => false,
 								);
@@ -71,12 +72,12 @@
                         <div class="nav-button"><span></span><span></span><span></span></div>
                     </div>
                     <div class="page-subtitle">
-						<a href="<?php echo esc_url(site_url()); ?>" class="ajax">
+						<a href="<?php echo esc_url(home_url()); ?>" class="ajax">
                             <i class="fal fa-home"></i>
                         </a>
                         <span></span>
 					</div>
-                    <a href="<?php echo esc_url(site_url()); ?>" class="ajax mob-logo">
+                    <a href="<?php echo esc_url(home_url()); ?>" class="ajax mob-logo">
                         <span></span><strong></strong>
                     </a>
                     <?php

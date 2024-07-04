@@ -1,7 +1,6 @@
 <?php
 /**
  * Shadin functions and definitions
- *
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -21,8 +20,6 @@ function shadin_setup() {
 	/*
 	* Make theme available for translation.
 	* Translations can be filed in the /languages/ directory.
-	* If you're building a theme based on Shadin, use a find and replace
-	* to change 'shadin' to the name of your theme in all the template files.
 	*/
 	load_theme_textdomain( 'shadin', get_template_directory() . '/languages' );
 
@@ -31,9 +28,6 @@ function shadin_setup() {
 
 	/*
 	* Let WordPress manage the document title.
-	* By adding theme support, we declare that this theme does not use a
-	* hard-coded <title> tag in the document head, and expect WordPress to
-	* provide it for us.
 	*/
 	add_theme_support( 'title-tag' );
 
@@ -48,8 +42,7 @@ function shadin_setup() {
 	);
 
 	/*
-	* Switch default core markup for search form, comment form, and comments
-	* to output valid HTML5.
+	* Switch default core markup for search form, comment form, and comments  to output valid HTML5.
 	*/
 	add_theme_support(
 		'html5',
@@ -65,16 +58,16 @@ function shadin_setup() {
 	);
 
 	// Set up the WordPress core custom background feature.
-	// add_theme_support(
-	// 	'custom-background',
-	// 	apply_filters(
-	// 		'shadin_custom_background_args',
-	// 		array(
-	// 			'default-color' => 'ffffff',
-	// 			'default-image' => '',
-	// 		)
-	// 	)
-	// );
+	add_theme_support(
+		'custom-background',
+		apply_filters(
+			'shadin_custom_background_args',
+			array(
+				'default-color' => 'ffffff',
+				'default-image' => '',
+			)
+		)
+	);
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -89,8 +82,23 @@ function shadin_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	// Add support for block styles
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for responsive embeds
+	add_theme_support( 'responsive-embeds' );
+
+	// Add support for wide and full alignments
+	add_theme_support( 'align-wide' );
 }
 add_action( 'after_setup_theme', 'shadin_setup' );
+
+// add custom styles to the post editor
+function shadin_theme_add_editor_styles() {
+    add_editor_style( 'editor-style.css' );
+}
+add_action( 'admin_init', 'shadin_theme_add_editor_styles' );
 
 // Enqueue scripts and styles.
 function shadin_scripts() {
@@ -169,3 +177,6 @@ require get_template_directory() . '/inc/custom-metabox.php';
 
 // this is comment format
 require get_template_directory() . '/template-parts/comment_format.php';
+
+// Required Plugins
+require get_template_directory() . '/inc/tgm-plugin/required-plugins.php';

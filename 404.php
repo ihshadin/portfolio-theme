@@ -14,7 +14,7 @@ get_header();
 			<div class="container">
 				<h2><?php echo esc_html('404', 'shadin') ?></h2>
 				<p><?php echo esc_html("We're sorry, but the content you were looking for, couldn't be found.", 'shadin') ?></p>
-				<a href="<?php echo esc_url(site_url()); ?>" class="btn ajax color-bg"><span><?php echo esc_html('Back to Home Page', 'shadin') ?></span></a>
+				<a href="<?php echo esc_url(home_url()); ?>" class="btn ajax color-bg"><span><?php echo esc_html('Back to Home Page', 'shadin') ?></span></a>
 			</div>
 		</div>
 	</div>
