@@ -18,6 +18,13 @@ function my_theme_register_required_plugins() {
             'force_deactivation'    => true,
 		),
 		// array(
+		// 	'name'                  => 'Shadin Customizer',
+		// 	'slug'                  => 'kirki',
+		// 	'required'              => true,
+        //     'force_activation'      => true,
+        //     'force_deactivation'    => true,
+		// ),
+		// array(
 		// 	'name'               => 'TGM Example Plugin', // The plugin name.
 		// 	'slug'               => 'tgm-example-plugin', // The plugin slug (typically the folder name).
 		// 	'source'             => get_stylesheet_directory() . '/lib/plugins/tgm-example-plugin.zip', // The plugin source.

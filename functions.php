@@ -24,11 +24,9 @@ function shadin_setup() {
 	load_theme_textdomain( 'shadin', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+	// add_theme_support( 'automatic-feed-links' );
 
-	/*
-	* Let WordPress manage the document title.
-	*/
+	// Let WordPress manage the document title.
 	add_theme_support( 'title-tag' );
 
 	// Enable support for Post Thumbnails on posts and pages.
@@ -41,9 +39,7 @@ function shadin_setup() {
 		)
 	);
 
-	/*
-	* Switch default core markup for search form, comment form, and comments  to output valid HTML5.
-	*/
+	// Switch default core markup for search form, comment form, and comments  to output valid HTML5.
 	add_theme_support(
 		'html5',
 		array(
@@ -58,16 +54,16 @@ function shadin_setup() {
 	);
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'shadin_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);
+	// add_theme_support(
+	// 	'custom-background',
+	// 	apply_filters(
+	// 		'shadin_custom_background_args',
+	// 		array(
+	// 			'default-color' => 'ffffff',
+	// 			'default-image' => '',
+	// 		)
+	// 	)
+	// );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -84,7 +80,7 @@ function shadin_setup() {
 	);
 
 	// Add support for block styles
-	add_theme_support( 'wp-block-styles' );
+	// add_theme_support( 'wp-block-styles' );
 
 	// Add support for responsive embeds
 	add_theme_support( 'responsive-embeds' );

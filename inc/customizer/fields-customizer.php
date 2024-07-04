@@ -134,16 +134,7 @@ new \Kirki\Field\Upload(
         ],
 	]
 );
-// Add a section "Headers Parts"
-new \Kirki\Section(
-	'shadin_header_top',
-	[
-		'title'       => esc_html__( 'Headers Top info', 'shadin' ),
-		'description' => esc_html__( "You can edit header's top from there. (Text, Photo, URL and others)", 'shadin' ),
-        'panel'       => 'shadin_header_parts',
-		'priority'    => 20,
-	]
-);
+
 // Website Title field
 new \Kirki\Field\Text(
 	[
@@ -1628,7 +1619,7 @@ new \Kirki\Field\Color(
         'settings'    => 'primary_color',
         'label'       => esc_html__('Primary Color', 'shadin'),
         'description'       => esc_html__("Add a color for your whole website's as primary color", 'shadin'),
-        'section'     => 'shadin_color_section',
+        'section'     => 'shadin_colors_section',
         'default'     => '#f89020',
         'transport'   => 'refresh',
     ]
@@ -1638,7 +1629,7 @@ new \Kirki\Field\Color(
         'settings'    => 'secondary_color',
         'label'       => esc_html__('Secondary Color', 'shadin'),
         'description'       => esc_html__("Add a color for your whole website's as secondary color", 'shadin'),
-        'section'     => 'shadin_color_section',
+        'section'     => 'shadin_colors_section',
         'default'     => '#FFFFFF',
         'transport'   => 'refresh',
     ]
@@ -1648,7 +1639,7 @@ new \Kirki\Field\Color(
         'settings'    => 'accent_color',
         'label'       => esc_html__('Accent Color', 'shadin'),
         'description'       => esc_html__("Add a color for your whole website's as accent color", 'shadin'),
-        'section'     => 'shadin_color_section',
+        'section'     => 'shadin_colors_section',
         'default'     => 'rgba(255, 255, 255, 0.6)',
         'transport'   => 'refresh',
 		'choices'     => [
@@ -1661,7 +1652,7 @@ new \Kirki\Field\Color(
         'settings'    => 'box_shadow_color',
         'label'       => esc_html__('Box Shadow Color', 'shadin'),
         'description'       => esc_html__("Add a color for your whole website's as Box shadow color", 'shadin'),
-        'section'     => 'shadin_color_section',
+        'section'     => 'shadin_colors_section',
         'default'     => 'rgba(0, 0, 0, 0.1)',
         'transport'   => 'refresh',
 		'choices'     => [
@@ -1674,7 +1665,7 @@ new \Kirki\Field\Color(
         'settings'    => 'border_color',
         'label'       => esc_html__('Border Color', 'shadin'),
         'description'       => esc_html__("Add a color for your whole website's as border color", 'shadin'),
-        'section'     => 'shadin_color_section',
+        'section'     => 'shadin_colors_section',
         'default'     => 'rgba(255, 255, 255, 0.1)',
         'transport'   => 'refresh',
 		'choices'     => [
@@ -1687,7 +1678,7 @@ new \Kirki\Field\Multicolor(
         'settings'    => 'gradient_colors',
         'label'       => esc_html__('Gradient Colors', 'shadin'),
         'description'       => esc_html__("Those colors will effect on as Gradient colors", 'shadin'),
-        'section'     => 'shadin_color_section',
+        'section'     => 'shadin_colors_section',
         'priority'  => 10,
         'transport'   => 'refresh',
 		'default'   => [
@@ -1706,7 +1697,7 @@ new \Kirki\Field\Multicolor(
 		'settings'  => 'background_colors',
 		'label'     => esc_html__( 'Background Colors', 'shadin' ),
 		'description'     => esc_html__( 'This color will effect on as a box background color', 'shadin' ),
-		'section'   => 'shadin_color_section',
+		'section'   => 'shadin_colors_section',
 		'priority'  => 10,
         'transport'   => 'refresh',
 		'default'   => [
@@ -1725,7 +1716,7 @@ new \Kirki\Field\Multicolor(
 		'settings'  => 'body_bg_colors',
 		'label'     => esc_html__( 'Body Background Colors', 'shadin' ),
 		'description'     => esc_html__( 'Choose two colors for website background color. if you want solid color then you can choose same color', 'shadin' ),
-		'section'   => 'shadin_color_section',
+		'section'   => 'shadin_colors_section',
 		'priority'  => 10,
         'transport'   => 'refresh',
 		'default'   => [
@@ -1739,6 +1730,7 @@ new \Kirki\Field\Multicolor(
 		'alpha'     => true,
 	]
 );
+
 // Font family
 new \Kirki\Field\Typography(
 	[

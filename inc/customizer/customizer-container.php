@@ -1,4 +1,12 @@
 <?php
+// Kirki Config
+if ( ! class_exists( 'Kirki' ) ) {
+    include_once( dirname( __FILE__ ) . '/kirki.php' );
+}
+Kirki::add_config( 'theme_config_id', array(
+    'capability'    => 'edit_theme_options',
+    'option_type'   => 'theme_mod',
+) );
 
 // Remove default section "Site Identity"
 function remove_site_identity_section( $wp_customize ) {
@@ -57,6 +65,16 @@ new \Kirki\Section(
 		'description' => esc_html__( "You can edit header's sidebar from there. (Text, Photo, URL and others)", 'shadin' ),
         'panel'       => 'shadin_header_parts',
 		'priority'    => 10,
+	]
+);
+// Add a section "Headers Parts"
+new \Kirki\Section(
+	'shadin_header_top',
+	[
+		'title'       => esc_html__( 'Headers Top info', 'shadin' ),
+		'description' => esc_html__( "You can edit header's top from there. (Text, Photo, URL and others)", 'shadin' ),
+        'panel'       => 'shadin_header_parts',
+		'priority'    => 20,
 	]
 );
 
@@ -153,7 +171,7 @@ new \Kirki\Section(
 );
 // Add a section "Color Section"
 new \Kirki\Section(
-	'shadin_color_section',
+	'shadin_colors_section',
 	[
 		'title'       => esc_html__( 'Colors', 'shadin' ),
 		'description' => esc_html__( "You can edit All Colors from here.", 'shadin' ),
