@@ -35,6 +35,7 @@ h1 {
 .gallery-caption,
 .sticky,
 .wp-caption-text,
-.wp-caption {
+.wp-caption,
+.screen-reader-text {
   margin: auto;
 }
