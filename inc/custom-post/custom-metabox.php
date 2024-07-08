@@ -29,17 +29,17 @@ function additional_info_callback($post) {
     <!-- Project Url -->
     <div class="website_links_container">
         <div class="field-live_url description description-wide">
-            <label for="website_live_url" class="info_project_heading"><?php _e('Website Live URL', 'shadin'); ?></label>
+            <label for="website_live_url" class="info_project_heading"><?php _e('Website Live URL', 'aesthetica'); ?></label>
             <p>Add Live URL of your project's</p>
             <input type='url' id="website_live_url" class="widefat" name="website_live_url" value="<?php echo esc_attr(get_post_meta( $post->ID, 'website_live_url', true)); ?>" placeholder="Input Live URL" />
         </div>
         <div class="field-front_end_github description description-wide" style="display: none;">
-            <label for="website_front_end_github" class="info_project_heading"><?php _e('Front-end GitHub url', 'shadin'); ?></label>
+            <label for="website_front_end_github" class="info_project_heading"><?php _e('Front-end GitHub url', 'aesthetica'); ?></label>
             <p>Add front-end github link of your project's</p>
             <input type='url' id="website_front_end_github" class="widefat" name="website_front_end_github" value="<?php echo esc_attr(get_post_meta( $post->ID, 'website_front_end_github', true)); ?>" placeholder="Input Frontend GitHub URL" />
         </div>
         <div class="field-back_end_github description description-wide" style="display: none;">
-            <label for="website_back_end_github" class="info_project_heading"><?php _e('Back-end GitHub url', 'shadin'); ?></label>
+            <label for="website_back_end_github" class="info_project_heading"><?php _e('Back-end GitHub url', 'aesthetica'); ?></label>
             <p>Add back-end github link of your project's</p>
             <input type='url' id="website_back_end_github" class="widefat" name="website_back_end_github" value="<?php echo esc_attr(get_post_meta( $post->ID, 'website_back_end_github', true)); ?>" placeholder="Input Backend GitHub URL" />
         </div>
@@ -51,7 +51,7 @@ function additional_info_callback($post) {
     $gallery_data = get_post_meta($post->ID, 'gallery_data', true);
     ?>
     <div id="gallery_wrapper">
-        <h5 class="info_project_heading"><?php _e('Project Screenshot', 'shadin'); ?></h5>
+        <h5 class="info_project_heading"><?php _e('Project Screenshot', 'aesthetica'); ?></h5>
         <div id="img_box_container">
             <?php 
             if (isset($gallery_data['image_url'])) {
